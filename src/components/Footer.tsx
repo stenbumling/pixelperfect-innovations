@@ -9,6 +9,8 @@ import styled from "styled-components";
 const FooterContainer = styled.footer`
   display: flex;
   justify-content: space-between;
+  border-top: 1px solid black;
+  padding: 3rem 0;
 `;
 
 const ContentDiv = styled.div`
