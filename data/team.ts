@@ -52,9 +52,9 @@ const teamMembers: TeamMember[] = [
   },
   {
     id: '5',
-    image: '/assets/marcus.png',
-    imageNameCaption: 'Marcus Rosenberg',
-    name: 'Marcus Rosenberg',
+    image: '/assets/marlon.png',
+    imageNameCaption: 'Marlon Rosenberg',
+    name: 'Marlon Rosenberg',
     jobTitle: 'Graphic Designer',
     description:
       'Creating visually stunning and impactful designs that capture attention and communicate messages effectively. Passionate about blending artistry with functionality to create designs that resonate.',
