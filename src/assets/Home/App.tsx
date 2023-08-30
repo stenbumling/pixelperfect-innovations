@@ -1,20 +1,12 @@
-import { useState } from 'react';
+import HeroSection from "./Hero/HeroSection";
+import MapSection from "./Map/MapSection";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className="App grid-container">
-      <div className="grid">
-        <h1>Transforming Ideas Into Digital Reality</h1>
-        <h2>Example text</h2>
-        <div className="card">
-          <button onClick={() => setCount((count) => count + 1)}>
-            button example {count}
-          </button>
-        </div>
-      </div>
-    </div>
+    <>
+      <HeroSection />
+      <MapSection />
+    </>
   );
 }
 
