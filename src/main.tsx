@@ -1,10 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { createRoutesFromElements, Route } from 'react-router';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import App from './App';
-import './index.css';
-import ProfilePage from './ProfilePage';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { createRoutesFromElements, Route } from "react-router";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import App from "./assets/Home/App";
+import ProfilePage from "./assets/Profile/ProfilePage";
+import "./index.css";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -15,7 +15,7 @@ const router = createBrowserRouter(
   )
 );
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <RouterProvider router={router} />
   </React.StrictMode>
