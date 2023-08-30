@@ -63,7 +63,7 @@ function Footer() {
         <Header>Contact</Header>
         <ContactDetails>
           <p>PixelPerfect Innovations</p>
-          <p>Anders Personsgatan 18,</p>
+          <p>Anders Personsgatan 18</p>
           <p>416 64 Göteborg</p>
         </ContactDetails>
         <ContactDetails>
