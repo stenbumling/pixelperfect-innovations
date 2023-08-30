@@ -36,13 +36,24 @@ const Header = styled.h4`
   margin-bottom: 0.5rem;
 `;
 
-const ContactDetails = styled.p`
-  margin-bottom: 1rem;
+const Links = styled.a`
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
-const PhoneNumber = styled.p`
+const ContactDetails = styled.p`
   margin-bottom: 1rem;
-  text-decoration: underline;
+
+  ${Links} {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 `;
 
 function Footer() {
@@ -55,23 +66,37 @@ function Footer() {
           <p>Anders Personsgatan 18,</p>
           <p>416 64 Göteborg</p>
         </ContactDetails>
-        <ContactDetails>info@pixelperfect.com</ContactDetails>
-        <PhoneNumber>031-83 28 31</PhoneNumber>
+        <ContactDetails>
+          <Links href="#">info@pixelperfect.com</Links>
+        </ContactDetails>
+        <ContactDetails>
+          <Links href="#">031-83 28 31</Links>
+        </ContactDetails>
       </ContentDiv>
       <ContentDiv>
         <Header>Work with us</Header>
         <ContactDetails>
           We are always looking for new people to join our team!
         </ContactDetails>
-        <ContactDetails>work@pixelperfect.com</ContactDetails>
+        <ContactDetails>
+          <Links href="#">work@pixelperfect.com</Links>
+        </ContactDetails>
       </ContentDiv>
       <ContentDiv>
         <Header>Social Media</Header>
         <SocialIcons>
-          <IconBrandLinkedin size={25} />
-          <IconBrandInstagram size={25} />
-          <IconBrandPinterest size={25} />
-          <IconBrandTwitterFilled size={25} />
+          <Links href="#">
+            <IconBrandLinkedin size={25} />
+          </Links>
+          <Links href="#">
+            <IconBrandInstagram size={25} />
+          </Links>
+          <Links href="#">
+            <IconBrandPinterest size={25} />
+          </Links>
+          <Links href="#">
+            <IconBrandTwitterFilled size={25} />
+          </Links>
         </SocialIcons>
       </ContentDiv>
     </FooterContainer>
