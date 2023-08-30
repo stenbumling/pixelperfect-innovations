@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Footer from "./Footer";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -13,6 +14,7 @@ function App() {
             button example {count}
           </button>
         </div>
+        <Footer />
       </div>
     </div>
   );
