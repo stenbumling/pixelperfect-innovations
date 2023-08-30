@@ -9,19 +9,24 @@ import styled from "styled-components";
 const FooterContainer = styled.footer`
   display: flex;
   justify-content: space-between;
-  padding: 1rem;
 `;
 
 const ContentDiv = styled.div`
   flex: 1;
   text-align: left;
+  padding-right: 1rem;
+`;
+
+const SocialIcons = styled.div`
+  display: flex;
+  gap: 0.5rem;
 `;
 
 function Footer() {
   return (
     <FooterContainer>
       <ContentDiv>
-        <h3>Contact</h3>
+        <h4>Contact</h4>
         <p>PixelPerfect Innovations</p>
         <p>Anders Personsgatan 18,</p>
         <p>416 64 Göteborg</p>
@@ -29,19 +34,18 @@ function Footer() {
         <p>031-83 28 31</p>
       </ContentDiv>
       <ContentDiv>
-        <h3>Work with us</h3>
+        <h4>Work with us</h4>
         <p>We are always looking for new people to join our team!</p>
         <p>work@pixelperfect.com</p>
       </ContentDiv>
       <ContentDiv>
-        <h3>Follow</h3>
-        {/* Add your social media icons here */}
-        <div>
+        <h4>Follow</h4>
+        <SocialIcons>
           <IconBrandLinkedin />
           <IconBrandInstagram />
           <IconBrandPinterest />
           <IconBrandTwitterFilled />
-        </div>
+        </SocialIcons>
       </ContentDiv>
     </FooterContainer>
   );
