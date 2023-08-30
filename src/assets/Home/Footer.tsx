@@ -9,7 +9,7 @@ import styled from "styled-components";
 const FooterContainer = styled.footer`
   display: flex;
   justify-content: space-between;
-  border-top: 1px solid black;
+  border-top: 1px solid var(--color-dark);
   padding: 3rem 0;
 
   @media (max-width: 768px) {
@@ -20,7 +20,7 @@ const FooterContainer = styled.footer`
 const ContentDiv = styled.div`
   flex: 1;
   text-align: left;
-  padding-right: 1rem;
+  padding-right: 1.5rem;
 
   @media (max-width: 768px) {
     margin-bottom: 3rem;
@@ -68,10 +68,10 @@ function Footer() {
       <ContentDiv>
         <Header>Social Media</Header>
         <SocialIcons>
-          <IconBrandLinkedin />
-          <IconBrandInstagram />
-          <IconBrandPinterest />
-          <IconBrandTwitterFilled />
+          <IconBrandLinkedin size={25} />
+          <IconBrandInstagram size={25} />
+          <IconBrandPinterest size={25} />
+          <IconBrandTwitterFilled size={25} />
         </SocialIcons>
       </ContentDiv>
     </FooterContainer>
