@@ -58,48 +58,52 @@ const ContactDetails = styled.p`
 
 function Footer() {
   return (
-    <FooterContainer>
-      <ContentDiv>
-        <Header>Contact</Header>
-        <ContactDetails>
-          <p>PixelPerfect Innovations</p>
-          <p>Anders Personsgatan 18,</p>
-          <p>416 64 Göteborg</p>
-        </ContactDetails>
-        <ContactDetails>
-          <Links href="#">info@pixelperfect.com</Links>
-        </ContactDetails>
-        <ContactDetails>
-          <Links href="#">031-83 28 31</Links>
-        </ContactDetails>
-      </ContentDiv>
-      <ContentDiv>
-        <Header>Work with us</Header>
-        <ContactDetails>
-          We are always looking for new people to join our team!
-        </ContactDetails>
-        <ContactDetails>
-          <Links href="#">work@pixelperfect.com</Links>
-        </ContactDetails>
-      </ContentDiv>
-      <ContentDiv>
-        <Header>Social Media</Header>
-        <SocialIcons>
-          <Links href="#">
-            <IconBrandLinkedin size={25} />
-          </Links>
-          <Links href="#">
-            <IconBrandInstagram size={25} />
-          </Links>
-          <Links href="#">
-            <IconBrandPinterest size={25} />
-          </Links>
-          <Links href="#">
-            <IconBrandTwitterFilled size={25} />
-          </Links>
-        </SocialIcons>
-      </ContentDiv>
-    </FooterContainer>
+    <div className="grid-container">
+      <div className="grid">
+        <FooterContainer>
+          <ContentDiv>
+            <Header>Contact</Header>
+            <ContactDetails>
+              <p>PixelPerfect Innovations</p>
+              <p>Anders Personsgatan 18,</p>
+              <p>416 64 Göteborg</p>
+            </ContactDetails>
+            <ContactDetails>
+              <Links href="#">info@pixelperfect.com</Links>
+            </ContactDetails>
+            <ContactDetails>
+              <Links href="#">031-83 28 31</Links>
+            </ContactDetails>
+          </ContentDiv>
+          <ContentDiv>
+            <Header>Work with us</Header>
+            <ContactDetails>
+              We are always looking for new people to join our team!
+            </ContactDetails>
+            <ContactDetails>
+              <Links href="#">work@pixelperfect.com</Links>
+            </ContactDetails>
+          </ContentDiv>
+          <ContentDiv>
+            <Header>Social Media</Header>
+            <SocialIcons>
+              <Links href="#">
+                <IconBrandLinkedin size={25} />
+              </Links>
+              <Links href="#">
+                <IconBrandInstagram size={25} />
+              </Links>
+              <Links href="#">
+                <IconBrandPinterest size={25} />
+              </Links>
+              <Links href="#">
+                <IconBrandTwitterFilled size={25} />
+              </Links>
+            </SocialIcons>
+          </ContentDiv>
+        </FooterContainer>
+      </div>
+    </div>
   );
 }
 
