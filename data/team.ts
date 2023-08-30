@@ -1,7 +1,6 @@
 export interface TeamMember {
   id: string;
   image: string;
-  imageNameCaption: string;
   name: string;
   jobTitle: string;
   description: string;
@@ -12,7 +11,6 @@ const teamMembers: TeamMember[] = [
   {
     id: '1',
     image: '/assets/taryn.png',
-    imageNameCaption: 'Taryn Woodlund',
     name: 'Taryn Woodlund',
     jobTitle: 'UX/UI Designer',
     description:
@@ -23,7 +21,6 @@ const teamMembers: TeamMember[] = [
   {
     id: '2',
     image: '/assets/eleanor.png',
-    imageNameCaption: 'Eleanor Dalhurst',
     name: 'Eleanor Dalhurst',
     jobTitle: 'Front End Developer',
     description:
@@ -33,7 +30,6 @@ const teamMembers: TeamMember[] = [
   {
     id: '3',
     image: '/assets/gage.png',
-    imageNameCaption: 'Gage Logan Martin',
     name: 'Gage Logan Martin',
     jobTitle: 'Back End Developer',
     description:
@@ -43,7 +39,6 @@ const teamMembers: TeamMember[] = [
   {
     id: '4',
     image: '/assets/lila-marie.png',
-    imageNameCaption: 'Lila Marie Andersen',
     name: 'Lila Marie Andersen',
     jobTitle: 'Full Stack Developer',
     description:
@@ -53,7 +48,6 @@ const teamMembers: TeamMember[] = [
   {
     id: '5',
     image: '/assets/marlon.png',
-    imageNameCaption: 'Marlon Rosenberg',
     name: 'Marlon Rosenberg',
     jobTitle: 'Graphic Designer',
     description:
