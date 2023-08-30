@@ -44,7 +44,7 @@ const Links = styled.a`
   }
 `;
 
-const ContactDetails = styled.p`
+const ContactDetails = styled.div`
   margin-bottom: 1rem;
 
   ${Links} {
