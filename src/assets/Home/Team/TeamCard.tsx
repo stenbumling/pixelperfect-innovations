@@ -18,7 +18,7 @@ const Card = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  height: 40vh;
+  height: 35vh;
   position: relative;
   span {
     position: absolute;
@@ -29,10 +29,10 @@ const Card = styled.div`
 
   img {
     flex: 1;
-    height: 40vh;
+    height: 35vh;
     aspect-ratio: 0.75;
     object-fit: cover;
-    opacity: 0.7;
+    opacity: 0.5;
 
     &:hover,
     &:focus {
