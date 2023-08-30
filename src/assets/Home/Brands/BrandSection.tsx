@@ -52,12 +52,12 @@ export default function BrandSection() {
                 alt="flattered logo"
               />
               <BrandLogo
-                src="./client-brand-logos/polestar-logo.svg"
-                alt="polestar logo"
-              />
-              <BrandLogo
                 src="./client-brand-logos/vitra-logo.svg"
                 alt="vitra logo"
+              />
+              <BrandLogo
+                src="./client-brand-logos/polestar-logo.svg"
+                alt="polestar logo"
               />
               <BrandLogo
                 src="./client-brand-logos/skf-logo.svg"
