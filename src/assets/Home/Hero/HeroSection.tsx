@@ -1,3 +1,9 @@
 export default function HeroSection() {
-  return <></>;
+  return (
+    <>
+      <div className="grid-container">
+        <div className="grid"></div>
+      </div>
+    </>
+  );
 }
