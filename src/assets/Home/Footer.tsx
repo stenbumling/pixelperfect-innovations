@@ -11,12 +11,20 @@ const FooterContainer = styled.footer`
   justify-content: space-between;
   border-top: 1px solid black;
   padding: 3rem 0;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const ContentDiv = styled.div`
   flex: 1;
   text-align: left;
   padding-right: 1rem;
+
+  @media (max-width: 768px) {
+    margin-bottom: 3rem;
+  }
 `;
 
 const SocialIcons = styled.div`
@@ -24,24 +32,41 @@ const SocialIcons = styled.div`
   gap: 0.5rem;
 `;
 
+const Header = styled.h4`
+  margin-bottom: 0.5rem;
+`;
+
+const ContactDetails = styled.p`
+  margin-bottom: 1rem;
+`;
+
+const PhoneNumber = styled.p`
+  margin-bottom: 1rem;
+  text-decoration: underline;
+`;
+
 function Footer() {
   return (
     <FooterContainer>
       <ContentDiv>
-        <h4>Contact</h4>
-        <p>PixelPerfect Innovations</p>
-        <p>Anders Personsgatan 18,</p>
-        <p>416 64 Göteborg</p>
-        <p>info@pixelperfect.com</p>
-        <p>031-83 28 31</p>
+        <Header>Contact</Header>
+        <ContactDetails>
+          <p>PixelPerfect Innovations</p>
+          <p>Anders Personsgatan 18,</p>
+          <p>416 64 Göteborg</p>
+        </ContactDetails>
+        <ContactDetails>info@pixelperfect.com</ContactDetails>
+        <PhoneNumber>031-83 28 31</PhoneNumber>
       </ContentDiv>
       <ContentDiv>
-        <h4>Work with us</h4>
-        <p>We are always looking for new people to join our team!</p>
-        <p>work@pixelperfect.com</p>
+        <Header>Work with us</Header>
+        <ContactDetails>
+          We are always looking for new people to join our team!
+        </ContactDetails>
+        <ContactDetails>work@pixelperfect.com</ContactDetails>
       </ContentDiv>
       <ContentDiv>
-        <h4>Follow</h4>
+        <Header>Social Media</Header>
         <SocialIcons>
           <IconBrandLinkedin />
           <IconBrandInstagram />
