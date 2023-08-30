@@ -19,8 +19,12 @@
   --font-size-l: 2.8125rem;
   --font-size-xl: clamp(2.375rem, 1.3705rem + 4.7273vw, 5.625rem);
   --font-size-xxl: clamp(3rem, 1.0295rem + 9.2727vw, 9.375rem);
-  --grid-main: minmax(16px, 1fr) [main-start] minmax(0, 87.5rem) [main-end]
-    minmax(16px, 1fr);
+  --grid-main: minmax(6.125rem, 1fr) [main-start] minmax(0, 87.5rem) [main-end]
+    minmax(6.125rem, 1fr);
+  --grid-medium: minmax(3rem, 1fr) [main-start] minmax(0, 87.5rem) [main-end]
+    minmax(3rem, 1fr);
+  --grid-small: minmax(1rem, 1fr) [main-start] minmax(0, 87.5rem) [main-end]
+    minmax(1rem, 1fr);
 }
 
 * {
@@ -31,6 +35,13 @@
 .grid-container {
   display: grid;
   grid-template-columns: var(--grid-main);
+
+  @media (max-width: 1020px) {
+    grid-template-columns: var(--grid-medium);
+  }
+  @media (max-width: 450px) {
+    grid-template-columns: var(--grid-small);
+  }
 }
 
 .grid {
