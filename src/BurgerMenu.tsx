@@ -25,10 +25,10 @@ const StyledBurgerMenu = styled.div`
 `;
 
 const Burger = styled.div<{ $menuOpen: boolean }>`
-  width: 1.9rem;
+  width: 2.9rem;
   height: 0.2rem;
   position: relative;
-  top: 0;
+  top: 1rem;
   background-color: ${({ $menuOpen }) =>
     $menuOpen === true ? "transparent" : "#fff"};
 
@@ -47,13 +47,13 @@ const Burger = styled.div<{ $menuOpen: boolean }>`
 
   &::after {
     rotate: ${({ $menuOpen }) => ($menuOpen ? "45deg" : "0")};
-    top: ${({ $menuOpen }) => ($menuOpen ? "0" : "-.6rem")};
+    top: ${({ $menuOpen }) => ($menuOpen ? "0" : "-0.9rem")};
   }
 
   &::before {
-    width: ${({ $menuOpen }) => ($menuOpen ? "1.9rem " : "1rem")};
+    width: ${({ $menuOpen }) => ($menuOpen ? "2.7rem " : "1.6rem")};
     rotate: ${({ $menuOpen }) => ($menuOpen ? "-45deg" : "0")};
-    top: ${({ $menuOpen }) => ($menuOpen ? "0" : ".6rem")};
+    top: ${({ $menuOpen }) => ($menuOpen ? "0" : "0.9rem")};
     right: 0;
   }
 `;
