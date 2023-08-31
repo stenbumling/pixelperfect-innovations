@@ -1,12 +1,14 @@
-import Header from "../../Header";
-import Footer from "./Footer";
-import HeroSection from "./Hero/HeroSection";
+import Header from '../../Header';
+import BrandSection from './Brands/BrandSection';
+import Footer from './Footer';
+import HeroSection from './Hero/HeroSection';
 
 function App() {
   return (
     <>
       <Header />
       <HeroSection />
+      <BrandSection />
       <Footer />
     </>
   );
