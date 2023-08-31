@@ -3,18 +3,24 @@ import { TeamMember } from "../../../../data/team";
 
 interface Props {
   person: TeamMember;
+  activePerson: boolean;
+  //   index: number;
+  setActivePerson: () => void;
 }
-
-export default function TeamCard({ person: { name, image } }: Props) {
+export default function TeamCard({
+  person: { name, image },
+  activePerson,
+  setActivePerson,
+}: Props) {
   return (
-    <Card>
+    <Card $activePerson={activePerson} onClick={() => setActivePerson()}>
       <img src={image} alt={name} />
       <span>{name}</span>
     </Card>
   );
 }
 
-const Card = styled.div`
+const Card = styled.div<{ $activePerson: boolean }>`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -32,7 +38,8 @@ const Card = styled.div`
     height: 35vh;
     aspect-ratio: 0.75;
     object-fit: cover;
-    opacity: 0.5;
+    cursor: pointer;
+    opacity: ${({ $activePerson }) => ($activePerson ? 1 : 0.5)};
 
     &:hover,
     &:focus {

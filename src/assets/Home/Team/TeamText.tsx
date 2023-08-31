@@ -3,15 +3,21 @@ import { TeamMember } from "../../../../data/team";
 import arrow from "../../../../public/icons/arrow.svg";
 
 interface Props {
+  activePerson: boolean;
+  setActivePerson: (index: number) => void;
   person: TeamMember;
+  index: number;
 }
 
 export default function TeamText({
   person: { name, jobTitle, description, quote },
+  activePerson,
+  setActivePerson,
+  index,
 }: Props) {
   return (
     <Card>
-      <InfoSection>
+      <InfoSection activePerson={activePerson}>
         <h3>{name}</h3>
         <h4>{jobTitle}</h4>
         <p>{description}</p>
@@ -19,7 +25,7 @@ export default function TeamText({
           Go to profile <img src={arrow} alt="arrow" />
         </Link>
       </InfoSection>
-      <Quote>
+      <Quote activePerson={activePerson}>
         <p>{quote}</p>
       </Quote>
     </Card>
@@ -29,10 +35,8 @@ export default function TeamText({
 const Card = styled.div`
   width: 100%;
   display: flex;
-  height: 40vh;
   position: relative;
   align-items: center;
-  gap: 6rem;
   span {
     position: absolute;
     bottom: 1rem;
@@ -41,21 +45,38 @@ const Card = styled.div`
   }
 `;
 
-const InfoSection = styled.div`
+const InfoSection = styled.div<{ activePerson: boolean }>`
   width: 100%;
   display: flex;
   flex-direction: column;
-  max-width: 40vw;
-  gap: 0.4rem;
+  gap: 0.5rem;
+  padding: 1rem;
+  ${({ activePerson }) => (activePerson ? "display: flex;" : "display: none;")}
+
+  h3 {
+    font-size: var(--font-size-m);
+  }
+
+  h4 {
+    font-size: var(--font-size-s);
+  }
+
+  @media (max-width: 800px) {
+    padding: 1rem 1rem 1rem 0;
+  }
 `;
 
-const Quote = styled.div`
+const Quote = styled.div<{ activePerson: boolean }>`
   color: var(--color-accent);
   font-size: var(--font-size-m);
-  max-width: 50vw;
-  padding: 4rem;
+  padding: 1rem;
+  display: ${({ activePerson }) => (activePerson ? "block" : "none")};
   p {
     font-size: var(--font-size-m);
+  }
+
+  @media (max-width: 800px) {
+    padding: 1rem 0 1rem 1rem;
   }
 `;
 

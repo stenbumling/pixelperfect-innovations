@@ -1,16 +1,23 @@
 import styled from "styled-components";
-import teamMembers, { TeamMember } from "../../../../data/team";
+import teamMembers from "../../../../data/team";
 import TeamCard from "./TeamCard";
 
 interface Props {
-  person: TeamMember;
+  activePerson: boolean;
+  setActivePerson: (index: number) => void;
 }
 
-export default function TeamGallery() {
+export default function TeamGallery({ activePerson, setActivePerson }: Props) {
   return (
     <Gallery>
+      <p>{activePerson}</p>
       {teamMembers.map((person, index) => (
-        <TeamCard person={person} {...person} key={index}></TeamCard>
+        <TeamCard
+          person={person}
+          key={index}
+          activePerson={activePerson}
+          setActivePerson={() => setActivePerson(index)}
+        ></TeamCard>
       ))}
     </Gallery>
   );
@@ -18,6 +25,7 @@ export default function TeamGallery() {
 
 const Gallery = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
+  gap: 1rem;
+  overflow-x: scroll;
 `;
