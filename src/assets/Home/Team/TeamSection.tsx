@@ -23,12 +23,11 @@ export default function TeamSection() {
         <div className="grid-container">
           <Carousel>
             <Gallery>
-              <p>{activePerson}</p>
               {teamMembers.map((person, index) => (
                 <TeamCard
                   person={person}
                   key={index}
-                  activePerson={index === activePersonIndex}
+                  $activePerson={index === activePersonIndex}
                   setActivePerson={() => handleSetActivePerson(index)}
                 ></TeamCard>
               ))}
@@ -37,7 +36,7 @@ export default function TeamSection() {
           <div className="grid">
             {teamMembers.map((person, index) => (
               <TeamText
-                activePerson={index === activePersonIndex}
+                $activePerson={index === activePersonIndex}
                 setActivePerson={() => handleSetActivePerson(index)}
                 person={person}
                 key={index}
@@ -53,21 +52,27 @@ export default function TeamSection() {
 
 const Title = styled.h4`
   grid-column: main;
+  font-size: var(--font-size-m);
   padding-bottom: 1rem;
 `;
 
 const Carousel = styled.div`
-  grid-column: 2/4;
+  grid-column: main;
+  @media (max-width: 1143px) {
+    grid-column: 2/4;
+  }
 `;
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  padding: 6rem 0;
 `;
 
 const Gallery = styled.div`
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.75rem;
   overflow-x: scroll;
+  padding-bottom: 3.5rem;
 `;

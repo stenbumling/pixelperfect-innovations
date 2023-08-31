@@ -3,7 +3,7 @@ import { TeamMember } from "../../../../data/team";
 import arrow from "../../../../public/icons/arrow.svg";
 
 interface Props {
-  activePerson: boolean;
+  $activePerson: boolean;
   setActivePerson: (index: number) => void;
   person: TeamMember;
   index: number;
@@ -11,13 +11,12 @@ interface Props {
 
 export default function TeamText({
   person: { name, jobTitle, description, quote },
-  activePerson,
-  setActivePerson,
+  $activePerson,
   index,
 }: Props) {
   return (
     <Card>
-      <InfoSection activePerson={activePerson}>
+      <InfoSection $activePerson={$activePerson}>
         <h3>{name}</h3>
         <h4>{jobTitle}</h4>
         <p>{description}</p>
@@ -25,8 +24,8 @@ export default function TeamText({
           Go to profile <img src={arrow} alt="arrow" />
         </Link>
       </InfoSection>
-      <Quote activePerson={activePerson}>
-        <p>{quote}</p>
+      <Quote $activePerson={$activePerson}>
+        <p>"{quote}"</p>
       </Quote>
     </Card>
   );
@@ -37,21 +36,28 @@ const Card = styled.div`
   display: flex;
   position: relative;
   align-items: center;
-  span {
-    position: absolute;
-    bottom: 1rem;
-    left: 1rem;
-    color: #fff;
+  justify-content: space-evenly;
+  gap: 6rem;
+
+  @media (max-width: 1000px) {
+    gap: 4rem;
+  }
+
+  @media (max-width: 800px) {
+    gap: 2rem;
+  }
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
   }
 `;
 
-const InfoSection = styled.div<{ activePerson: boolean }>`
-  width: 100%;
+const InfoSection = styled.div<{ $activePerson: boolean }>`
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  padding: 1rem;
-  ${({ activePerson }) => (activePerson ? "display: flex;" : "display: none;")}
+  max-width: 480px;
+  display: ${({ $activePerson }) => ($activePerson ? "block" : "none")};
 
   h3 {
     font-size: var(--font-size-m);
@@ -59,24 +65,32 @@ const InfoSection = styled.div<{ activePerson: boolean }>`
 
   h4 {
     font-size: var(--font-size-s);
+    font-weight: 400;
+  }
+
+  p {
+    padding: 1rem 0;
   }
 
   @media (max-width: 800px) {
-    padding: 1rem 1rem 1rem 0;
+    max-width: 380px;
   }
 `;
 
-const Quote = styled.div<{ activePerson: boolean }>`
-  color: var(--color-accent);
-  font-size: var(--font-size-m);
-  padding: 1rem;
-  display: ${({ activePerson }) => (activePerson ? "block" : "none")};
+const Quote = styled.div<{ $activePerson: boolean }>`
+  max-width: 480px;
+  display: ${({ $activePerson }) => ($activePerson ? "block" : "none")};
+
   p {
+    color: var(--color-accent);
     font-size: var(--font-size-m);
+    @media (max-width: 800px) {
+      font-size: 1.5rem;
+    }
   }
 
   @media (max-width: 800px) {
-    padding: 1rem 0 1rem 1rem;
+    max-width: 380px;
   }
 `;
 
@@ -85,12 +99,22 @@ const Link = styled.a`
   gap: 1rem;
   align-items: center;
   white-space: nowrap;
+  font-size: 1.5rem;
+  font-weight: 800;
 
   img {
-    width: 1.4rem;
+    width: 1.8rem;
     height: auto;
+    @media (max-width: 800px) {
+      width: 1rem;
+    }
   }
-  p {
+
+  a {
     font-size: var(--font-size-m);
+  }
+
+  @media (max-width: 800px) {
+    font-size: 1rem;
   }
 `;
