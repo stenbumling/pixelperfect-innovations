@@ -19,6 +19,7 @@ const Container = styled.div`
   background-color: transparent;
   position: fixed;
   mix-blend-mode: difference;
+  width: 100%;
 `;
 
 const HeaderInner = styled.div`
