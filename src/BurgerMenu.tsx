@@ -19,7 +19,7 @@ export default function BurgerMenu() {
 const StyledBurgerMenu = styled.div`
   cursor: pointer;
   position: relative;
-  height: 1.3rem;
+  height: 2.1rem;
   z-index: 104;
   mix-blend-mode: difference;
 `;
