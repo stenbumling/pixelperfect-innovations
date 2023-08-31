@@ -1,19 +1,23 @@
-import { useState } from "react";
+import styled from "styled-components";
 
 export default function HeroSection() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className="App grid-container">
-      <div className="grid">
-        <h1>Transforming Ideas Into Digital Reality</h1>
-        <h2>Example text</h2>
-        <div className="card">
-          <button onClick={() => setCount((count) => count + 1)}>
-            button exampdle {count}
-          </button>
+    <>
+      <div className="grid-container">
+        <div className="grid">
+          <Hero>
+            <h1>Transforming Ideas Into Digital Reality</h1>
+            <div className="card"></div>
+          </Hero>
         </div>
       </div>
-    </div>
+    </>
   );
 }
+
+const Hero = styled.div`
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
