@@ -40,14 +40,14 @@ const teamMembers: TeamMember[] = [
       'Experienced in crafting responsive and interactive web interfaces that seamlessly adapt to various devices. Enjoys turning design concepts into dynamic user experiences that leave a lasting impact.',
     quote: 'The best way to predict the future is to create it.',
     presentation:
-      'As a frontend developer, I bring designs to life through code, ensuring seamless user experiences across different platforms and screen sizes. My passion for clean and maintainable code, combined with an eye for design details, allows me to deliver web solutions that are as functional as they are visually appealing.',
+      'As a front end developer, I bring designs to life through code, ensuring seamless user experiences across different platforms and screen sizes. My passion for clean and maintainable code, combined with an eye for design details, allows me to deliver web solutions that are as functional as they are visually appealing.',
     skills: [
       'HTML',
       'CSS',
       'Javascript',
       'Typescript',
       'Responsive Design',
-      'Frontend Frameworks',
+      'Front End Frameworks',
       'Unit Testing',
     ],
   },
