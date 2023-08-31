@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import BurgerMenu from './BurgerMenu';
-import logo from '/icons/logo.svg';
+import styled from "styled-components";
+import BurgerMenu from "./BurgerMenu";
+import logo from "/icons/logo.svg";
 
 export default function Header() {
   return (
@@ -27,4 +27,12 @@ const HeaderInner = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 2rem 0;
+
+  @media (max-width: 800px) {
+    padding: 1.5rem 0;
+
+    img {
+      height: 30px;
+    }
+  }
 `;

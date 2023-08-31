@@ -22,6 +22,9 @@ const StyledBurgerMenu = styled.div`
   height: 2.1rem;
   z-index: 104;
   mix-blend-mode: difference;
+  @media (max-width: 800px) {
+    height: 1.8rem;
+  }
 `;
 
 const Burger = styled.div<{ $menuOpen: boolean }>`
@@ -55,5 +58,20 @@ const Burger = styled.div<{ $menuOpen: boolean }>`
     rotate: ${({ $menuOpen }) => ($menuOpen ? "-45deg" : "0")};
     top: ${({ $menuOpen }) => ($menuOpen ? "0" : "0.9rem")};
     right: 0;
+  }
+
+  @media (max-width: 800px) {
+    width: 2.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &::after {
+      top: ${({ $menuOpen }) => ($menuOpen ? "0" : "-0.7rem")};
+    }
+
+    &::before {
+      width: ${({ $menuOpen }) => ($menuOpen ? "2.2rem " : "1.2rem")};
+      top: ${({ $menuOpen }) => ($menuOpen ? "0" : "0.7rem")};
+    }
   }
 `;
