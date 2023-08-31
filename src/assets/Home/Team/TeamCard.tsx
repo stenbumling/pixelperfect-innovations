@@ -4,7 +4,6 @@ import { TeamMember } from "../../../../data/team";
 interface Props {
   person: TeamMember;
   activePerson: boolean;
-  //   index: number;
   setActivePerson: () => void;
 }
 export default function TeamCard({

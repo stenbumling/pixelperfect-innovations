@@ -1,7 +1,8 @@
 import { useState } from "react";
 import styled from "styled-components";
 import teamMembers from "../../../../data/team";
-import TeamGallery from "./TeamGallery";
+// import TeamGallery from "./TeamGallery";
+import TeamCard from "./TeamCard";
 import TeamText from "./TeamText";
 
 export default function TeamSection() {
@@ -21,10 +22,17 @@ export default function TeamSection() {
         </div>
         <div className="grid-container">
           <Carousel>
-            <TeamGallery
-              activePerson={activePerson}
-              setActivePerson={handleSetActivePerson}
-            />
+            <Gallery>
+              <p>{activePerson}</p>
+              {teamMembers.map((person, index) => (
+                <TeamCard
+                  person={person}
+                  key={index}
+                  activePerson={index === activePersonIndex}
+                  setActivePerson={() => handleSetActivePerson(index)}
+                ></TeamCard>
+              ))}
+            </Gallery>
           </Carousel>
           <div className="grid">
             {teamMembers.map((person, index) => (
@@ -55,4 +63,11 @@ const Carousel = styled.div`
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+`;
+
+const Gallery = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  overflow-x: scroll;
 `;
