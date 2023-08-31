@@ -1,15 +1,21 @@
+import { useLoadScript } from "@react-google-maps/api";
 import styled from "styled-components";
 import InteractiveMap from "./InteractiveMap";
 
 export default function MapSection() {
+  const { isLoaded } = useLoadScript({
+    googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
+  });
+
   return (
     <>
       <div className="grid-container">
         <Title>Find us</Title>
       </div>
+
       <div className="grid-container">
         <div className="grid">
-          <InteractiveMap />
+          {isLoaded ? <InteractiveMap /> : <div>Loading map...</div>}
         </div>
         <AddressContainer>
           <CompanyTitle className="grid">PixelPerfect Innovations</CompanyTitle>
