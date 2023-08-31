@@ -29,6 +29,8 @@ const HeaderInner = styled.div`
   padding: 2rem 0;
 
   @media (max-width: 800px) {
+    padding: 1.5rem 0;
+
     img {
       height: 30px;
     }
