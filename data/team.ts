@@ -20,7 +20,7 @@ const teamMembers: TeamMember[] = [
     quote:
       'Design is not just what it looks like and feels like. Design is how it works.',
     presentationText:
-      "With a strong foundation in design principles and a keen eye for detail, I'm dedicated to crafting seamless and delightful user experiences. My work bridges the gap between user needs and innovative design solutions, ensuring that every interface I create engages and delights users.",
+      'With a strong foundation in design principles and a keen eye for detail, as a UX/UI designer, I am dedicated to crafting seamless and delightful user experiences. My work bridges the gap between user needs and innovative design solutions, ensuring that every interface I create engages and delights users. I find inspiration in the intricate dance between aesthetics and functionality, and I take pride in crafting designs that not only look stunning but also serve a meaningful purpose. Guided by a deep understanding of human psychology and interaction patterns, my goal is to create digital environments that make users feel empowered, understood, and truly immersed in the experience.',
     skills: [
       'User Research',
       'Wireframing',
