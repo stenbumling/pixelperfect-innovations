@@ -32,6 +32,9 @@ const Card = styled.div<{ $activePerson: boolean }>`
     background-color: var(--color-light);
     color: var(--color-dark);
     font-size: var(--font-size-s);
+    @media (max-width: 800px) {
+      font-size: var(--font-size-xs);
+    }
   }
 
   img {

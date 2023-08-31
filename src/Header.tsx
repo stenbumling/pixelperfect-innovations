@@ -20,6 +20,7 @@ const Container = styled.div`
   position: fixed;
   mix-blend-mode: difference;
   width: 100%;
+  z-index: 100;
 `;
 
 const HeaderInner = styled.div`

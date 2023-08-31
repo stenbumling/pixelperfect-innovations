@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import teamMembers from "../../../../data/team";
-// import TeamGallery from "./TeamGallery";
+import Dot from "./Dot";
 import TeamCard from "./TeamCard";
 import TeamText from "./TeamText";
 
@@ -32,6 +32,15 @@ export default function TeamSection() {
                 ></TeamCard>
               ))}
             </Gallery>
+            <DotContainer>
+              {teamMembers.map((person, index) => (
+                <Dot
+                  $activePerson={index === activePersonIndex}
+                  setActivePerson={() => handleSetActivePerson(index)}
+                  key={index}
+                ></Dot>
+              ))}
+            </DotContainer>
           </Carousel>
           <div className="grid">
             {teamMembers.map((person, index) => (
@@ -58,6 +67,7 @@ const Title = styled.h4`
 
 const Carousel = styled.div`
   grid-column: main;
+  position: relative;
   @media (max-width: 1143px) {
     grid-column: 2/4;
   }
@@ -67,6 +77,18 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   padding: 6rem 0;
+`;
+
+const DotContainer = styled.div`
+  position: absolute;
+  gap: 0.4rem;
+  grid-column: main;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  bottom: 1.1rem;
+  left: 0;
 `;
 
 const Gallery = styled.div`

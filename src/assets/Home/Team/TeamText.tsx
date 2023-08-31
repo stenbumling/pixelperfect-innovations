@@ -12,7 +12,6 @@ interface Props {
 export default function TeamText({
   person: { name, jobTitle, description, quote },
   $activePerson,
-  index,
 }: Props) {
   return (
     <Card>
@@ -49,7 +48,6 @@ const Card = styled.div`
   @media (max-width: 600px) {
     flex-direction: column;
     align-items: flex-start;
-    padding: 1rem;
   }
 `;
 
