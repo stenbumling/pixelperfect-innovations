@@ -1,5 +1,6 @@
 import Footer from "../../Footer";
 import Header from "../../Header";
+import BrandSection from "./Brands/BrandSection";
 import HeroSection from "./Hero/HeroSection";
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <>
       <Header />
       <HeroSection />
+      <BrandSection />
       <Footer />
     </>
   );
