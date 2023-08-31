@@ -6,56 +6,6 @@ import {
 } from "@tabler/icons-react";
 import styled from "styled-components";
 
-const FooterContainer = styled.footer`
-  display: flex;
-  justify-content: space-between;
-  border-top: 1px solid var(--color-dark);
-  padding: 3rem 0;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
-`;
-
-const ContentDiv = styled.div`
-  flex: 1;
-  text-align: left;
-  padding-right: 1.5rem;
-
-  @media (max-width: 768px) {
-    margin-bottom: 3rem;
-  }
-`;
-
-const SocialIcons = styled.div`
-  display: flex;
-  gap: 0.5rem;
-`;
-
-const Header = styled.h4`
-  margin-bottom: 0.5rem;
-`;
-
-const Links = styled.a`
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
-`;
-
-const ContactDetails = styled.div`
-  margin-bottom: 1rem;
-
-  ${Links} {
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-`;
-
 function Footer() {
   return (
     <div className="grid-container">
@@ -106,5 +56,56 @@ function Footer() {
     </div>
   );
 }
+
+const FooterContainer = styled.footer`
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--color-dark);
+  padding: 3rem 0;
+  margin-top: 1rem;
+
+  @media (max-width: 790px) {
+    flex-direction: column;
+  }
+`;
+
+const ContentDiv = styled.div`
+  flex: 1;
+  text-align: left;
+  padding-right: 1.5rem;
+
+  @media (max-width: 790px) {
+    margin-bottom: 3rem;
+  }
+`;
+
+const SocialIcons = styled.div`
+  display: flex;
+  gap: 0.5rem;
+`;
+
+const Header = styled.h4`
+  margin-bottom: 0.5rem;
+`;
+
+const Links = styled.a`
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
+const ContactDetails = styled.div`
+  margin-bottom: 1rem;
+
+  ${Links} {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+`;
 
 export default Footer;
