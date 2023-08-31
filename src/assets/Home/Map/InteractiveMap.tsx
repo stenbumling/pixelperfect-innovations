@@ -1,14 +1,33 @@
-import { GoogleMap } from "@react-google-maps/api";
+import { GoogleMap, MarkerF } from "@react-google-maps/api";
+import { useMemo } from "react";
 import styled from "styled-components";
 
 export default function InteractiveMap() {
+  const address = useMemo(
+    () => ({ lat: 57.70992004609615, lng: 11.994712202229747 }),
+    []
+  );
+  const options = useMemo(
+    () => ({
+      disableDefaultUI: true,
+      clickableIcons: false,
+      zoomControl: true,
+    }),
+    []
+  );
+
   return (
     <Container>
       <GoogleMap
-        zoom={13}
-        center={{ lat: 57.71002661314838, lng: 11.995201114757762 }}
+        zoom={15}
+        center={address}
         mapContainerClassName="map-container"
-      ></GoogleMap>
+        options={options}
+      >
+        <MarkerF
+          position={address}
+        />
+      </GoogleMap>
     </Container>
   );
 }
