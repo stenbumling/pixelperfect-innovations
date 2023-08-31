@@ -1,3 +1,4 @@
+import { IconArrowRight } from "@tabler/icons-react";
 import styled from "styled-components";
 
 export default function HeroSection() {
@@ -7,8 +8,12 @@ export default function HeroSection() {
         <div className="grid">
           <Hero>
             <h1>Transforming Ideas Into Digital Reality</h1>
-            <h2>Example text</h2>
-            <div className="card"></div>
+            <Text>
+              Crafting immersive digital experiences through expert web
+              development, app creation, and tailored software solutions.
+            </Text>
+            <h4>Work with us</h4>
+            <IconArrowRight />
           </Hero>
         </div>
       </div>
@@ -28,4 +33,10 @@ const Hero = styled.div`
   justify-content: center;
   background-color: var(--color-dark);
   color: var(--color-light);
+`;
+
+const Text = styled.p`
+  margin: 0;
+  /* font-size: var(--font-size-m); */
+  max-width: 400px;
 `;
