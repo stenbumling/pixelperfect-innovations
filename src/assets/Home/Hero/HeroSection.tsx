@@ -18,8 +18,8 @@ function HeroSection() {
                 </p>
                 <Work>
                   <Link href="#">
-                    <h4>Work with us</h4>
-                    <IconArrowRight size={35} />
+                    <h5>Work with us</h5>
+                    <IconArrowRight size={24} />
                   </Link>
                 </Work>
               </Text>
@@ -69,7 +69,7 @@ const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 
   @media (min-width: 790px) {
     align-items: flex-end;
