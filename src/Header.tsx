@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import logo from "../public/icons/logo.svg";
-import BurgerMenu from "./BurgerMenu";
+import styled from 'styled-components';
+import BurgerMenu from './BurgerMenu';
+import logo from '/icons/logo.svg';
 
 export default function Header() {
   return (
