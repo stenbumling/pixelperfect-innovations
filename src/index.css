@@ -20,7 +20,7 @@
   --font-size-m: clamp(1rem, 1rem + 1.7273vw, 2rem);
   --font-size-l: clamp(1.275rem, 1rem + 2.7273vw, 2.8125rem);
   --font-size-xl: clamp(2.375rem, 1.3705rem + 4.7273vw, 5.625rem);
-  --font-size-xxl: clamp(3rem, 1.0295rem + 9.2727vw, 9.375rem);
+  --font-size-xxl: clamp(2.25rem, -0.3767rem + 10.7241vw, 9.275rem);
   --grid-main: minmax(6.125rem, 1fr) [main-start] minmax(0, 87.5rem) [main-end]
     minmax(6.125rem, 1fr);
   --grid-medium: minmax(3rem, 1fr) [main-start] minmax(0, 67.5rem) [main-end]
