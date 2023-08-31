@@ -7,7 +7,6 @@ export default function HeroSection() {
         <div className="grid">
           <Hero>
             <h1>Transforming Ideas Into Digital Reality</h1>
-            <h2>Example text</h2>
             <div className="card"></div>
           </Hero>
         </div>
