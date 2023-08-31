@@ -43,6 +43,7 @@ const Card = styled.div<{ $activePerson: boolean }>`
     max-height: 376px;
     max-width: 255px;
     cursor: pointer;
+    transition: 0.4s ease;
     opacity: ${({ $activePerson }) => ($activePerson ? 1 : 0.5)};
 
     &:hover,
