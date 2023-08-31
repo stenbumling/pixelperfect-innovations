@@ -24,15 +24,15 @@ export default function MapSection() {
 const Title = styled.h3`
   grid-column: main;
   font-size: var(--font-size-m);
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
 `;
 
 const AddressContainer = styled.div`
   grid-column: main;
   display: flex;
   flex-direction: column;
-  padding-top: 2rem;
-  padding-bottom: 8rem;
+  padding-top: 1rem;
+  padding-bottom: 12rem;
 `;
 
 const CompanyTitle = styled.h4`
