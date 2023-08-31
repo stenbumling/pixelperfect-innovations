@@ -56,4 +56,17 @@ const Burger = styled.div<{ $menuOpen: boolean }>`
     top: ${({ $menuOpen }) => ($menuOpen ? "0" : "0.9rem")};
     right: 0;
   }
+
+  @media (max-width: 800px) {
+    width: 2.2rem;
+
+    &::after {
+      top: ${({ $menuOpen }) => ($menuOpen ? "0" : "-0.6rem")};
+    }
+
+    &::before {
+      width: ${({ $menuOpen }) => ($menuOpen ? "2.2rem " : "1.2rem")};
+      top: ${({ $menuOpen }) => ($menuOpen ? "0" : "0.6rem")};
+    }
+  }
 `;
