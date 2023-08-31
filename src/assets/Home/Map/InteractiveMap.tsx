@@ -9,6 +9,7 @@ export default function InteractiveMap() {
   );
   const options = useMemo(
     () => ({
+      mapId: "e7f0fbdf65035845",
       disableDefaultUI: true,
       clickableIcons: false,
       zoomControl: true,
@@ -26,6 +27,10 @@ export default function InteractiveMap() {
       >
         <MarkerF
           position={address}
+          icon={{
+            url: "/public/icons/marker-icon.svg",
+            scaledSize: new window.google.maps.Size(60, 60),
+          }}
         />
       </GoogleMap>
     </Container>
