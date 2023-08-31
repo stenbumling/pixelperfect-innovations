@@ -37,8 +37,8 @@ const AddressContainer = styled.div`
   grid-column: main;
   display: flex;
   flex-direction: column;
-  padding-top: 1rem;
-  padding-bottom: 12rem;
+  padding-top: 2rem;
+  padding-bottom: 8rem;
 `;
 
 const CompanyTitle = styled.h4`
