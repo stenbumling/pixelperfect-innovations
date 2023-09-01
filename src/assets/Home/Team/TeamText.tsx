@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { TeamMember } from "../../../../data/team";
 import arrow from "../../../../public/icons/arrow.svg";
@@ -10,7 +11,7 @@ interface Props {
 }
 
 export default function TeamText({
-  person: { name, jobTitle, description, quote },
+  person: { name, jobTitle, description, quote, id },
   $activePerson,
 }: Props) {
   return (
@@ -19,9 +20,9 @@ export default function TeamText({
         <h3>{name}</h3>
         <h4>{jobTitle}</h4>
         <p>{description}</p>
-        <Link>
+        <StyledNavLink to={`/profile/${id}`}>
           Go to profile <img src={arrow} alt="arrow" />
-        </Link>
+        </StyledNavLink>
       </InfoSection>
       <Quote $activePerson={$activePerson}>
         <p>"{quote}"</p>
@@ -92,16 +93,17 @@ const Quote = styled.div<{ $activePerson: boolean }>`
   }
 `;
 
-const Link = styled.a`
+const StyledNavLink = styled(NavLink)`
   display: flex;
   gap: 1rem;
   align-items: center;
   white-space: nowrap;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
+  text-decoration: none;
   font-weight: 800;
 
   img {
-    width: 1.8rem;
+    width: 1.6rem;
     height: auto;
     @media (max-width: 800px) {
       width: 1rem;
