@@ -46,7 +46,6 @@ const HeroLayout = styled.div`
   display: flex;
   flex-direction: column;
   background-color: var(--color-dark);
-  padding: 20px;
 `;
 
 const TitleContainer = styled.div`
