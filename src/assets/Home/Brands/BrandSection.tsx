@@ -67,4 +67,8 @@ const Header = styled.h4`
 const BrandLogo = styled.img`
   width: auto;
   height: 1.6rem;
+
+  @media (max-width: 1024px) {
+    height: 1.2rem;
+  }
 `;
