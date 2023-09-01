@@ -1,7 +1,8 @@
-import Footer from "../../Footer";
-import Header from "../../Header";
-import HeroSection from "./Hero/HeroSection";
-import TeamSection from "./Team/TeamSection";
+import Footer from '../../Footer';
+import Header from '../../Header';
+import BrandSection from './Brands/BrandSection';
+import HeroSection from './Hero/HeroSection';
+import TeamSection from './Team/TeamSection';
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
       <Header />
       <HeroSection />
       <TeamSection />
-      {/* <BrandSection /> */}
+      <BrandSection />
       <Footer />
     </>
   );
