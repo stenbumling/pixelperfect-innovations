@@ -19,7 +19,7 @@ export default function MapSection() {
         </div>
         <AddressContainer>
           <CompanyTitle className="grid">PixelPerfect Innovations</CompanyTitle>
-          <div className="grid">Anders Personsgatan 18,</div>
+          <div className="grid">Anders Personsgatan 18</div>
           <div className="grid">416 64 Göteborg</div>
         </AddressContainer>
       </div>
