@@ -28,8 +28,8 @@ export default function InteractiveMap() {
         <MarkerF
           position={address}
           icon={{
-            url: "/public/icons/marker-icon.svg",
-            scaledSize: new window.google.maps.Size(60, 60),
+            url: "/public/icons/map-marker-icon.svg",
+            scaledSize: new window.google.maps.Size(40, 40),
           }}
         />
       </GoogleMap>
