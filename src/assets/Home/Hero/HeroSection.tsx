@@ -63,6 +63,10 @@ const Title = styled.h1`
   @media (min-width: 630px) {
     font-size: var(--font-size-xxl);
   }
+
+  @media (max-height: 660px) {
+    font-size: var(--font-size-xl);
+  }
 `;
 
 const TextContainer = styled.div`
