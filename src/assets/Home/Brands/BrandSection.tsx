@@ -43,14 +43,17 @@ export default function BrandSection() {
 
 const Background = styled.div`
   background: var(--color-dark);
+  padding: 9rem 0 9rem 0;
 `;
 
 const BrandContainer = styled.div`
-  height: 50vh;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 3rem;
   justify-content: space-between;
   align-items: center;
   background: var(--color-dark);
@@ -58,18 +61,7 @@ const BrandContainer = styled.div`
 
 const Header = styled.h4`
   color: var(--color-light);
-  margin-bottom: 2rem;
-`;
-
-const ContentDiv = styled.div`
-  display: flex;
-  gap: 2rem;
-  justify-content: space-between;
-  margin-bottom: 2rem;
-
-  @media (max-width: 768px) {
-    /* margin-bottom: 3rem; */
-  }
+  padding-bottom: 4rem;
 `;
 
 const BrandLogo = styled.img`
