@@ -2,6 +2,7 @@ import Footer from "../../Footer";
 import Header from "../../Header";
 import CaseSection from "./Cases/CaseSection";
 import HeroSection from "./Hero/HeroSection";
+import MapSection from "./Map/MapSection";
 import TeamSection from "./Team/TeamSection";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <TeamSection />
       {/* <BrandSection /> */}
       <CaseSection />
+      <MapSection />
       <Footer />
     </>
   );
