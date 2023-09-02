@@ -20,27 +20,29 @@ const CaseText = styled.p`
   padding: 1rem 0;
   width: 100%;
   background-color: var(--color-light);
-  /* font-size: var(--font-size-xs); */
+  height: 6.69rem;
   @media (max-width: 624px) {
+    font-size: var(--font-size-xs);
     padding: 0.6rem 0;
+    height: 5rem;
   }
 `;
 
 const CaseNr = styled.span`
   position: absolute;
-  top: -2.9rem;
+  top: -2.7rem;
   font-size: 1.5rem;
   font-weight: 300;
 `;
 
 const CaseVideo = styled.div`
-  height: 450px;
+  height: 28rem;
 
   video,
   img {
     position: absolute;
     width: 100%;
-    height: 450px;
+    height: 28rem;
     object-fit: cover;
   }
 
@@ -50,11 +52,19 @@ const CaseVideo = styled.div`
     }
   }
 
-  @media (max-width: 624px) {
-    height: 300px;
+  @media (max-width: 684px) {
+    height: 55vh;
     video,
     img {
-      height: 300px;
+      height: 55vh;
+    }
+  }
+
+  @media (max-width: 540px) {
+    height: 35vh;
+    video,
+    img {
+      height: 35vh;
     }
   }
 `;

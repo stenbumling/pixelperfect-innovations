@@ -20,7 +20,7 @@ export default function CaseSection() {
 }
 
 const OuterGridContainer = styled.div`
-  margin: 5rem 0 12rem;
+  margin: 5rem 0 15rem;
   transform: translateY(8vh);
   color: var(--clr-accent);
 `;
@@ -31,22 +31,23 @@ const CaseVideos = styled.div`
   gap: 1rem;
   align-items: center;
   justify-content: center;
-  padding: 3.5rem 0;
+  padding: 1.5rem 0;
+  height: 100%;
 
   @media (max-width: 1000px) {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    row-gap: 6rem;
-    padding: 4rem 10vw;
+    row-gap: 4rem;
+    padding: 1rem 10vw;
   }
 
   @media (max-width: 821px) {
-    padding: 4rem 0;
-    row-gap: 7rem;
+    padding: 1rem 0 4rem;
+    row-gap: 1rem;
   }
 
   @media (max-width: 280px) {
     grid-template-columns: 1fr;
+    padding: 3rem 0 8rem;
   }
 `;
 
