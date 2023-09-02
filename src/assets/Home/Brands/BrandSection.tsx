@@ -71,11 +71,11 @@ const BrandContainer = styled.div`
   }
 
   @media (max-width: 414px) {
-    gap: 1rem;
+    gap: 1.4rem 1rem;
   }
 
   @media (max-width: 375px) {
-    gap: 0.8rem;
+    gap: 1.4rem 0.8rem;
   }
 
   @media (max-width: 360px) {
