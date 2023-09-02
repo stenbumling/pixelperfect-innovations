@@ -43,11 +43,11 @@ export default function BrandSection() {
 
 const Background = styled.div`
   background: var(--color-dark);
-  padding: 9rem 0 9rem 0;
+  padding: 9rem 0;
 `;
 
 const BrandContainer = styled.div`
-  max-width: 1440px;
+  max-width: 1400px;
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -57,11 +57,39 @@ const BrandContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   background: var(--color-dark);
+
+  @media (max-width: 1440px) {
+    max-width: 1440px;
+  }
+
+  @media (max-width: 912px) {
+    gap: 1.8rem;
+  }
+
+  @media (max-width: 768px) {
+    gap: 3rem;
+  }
+
+  @media (max-width: 414px) {
+    gap: 1rem;
+  }
+
+  @media (max-width: 375px) {
+    gap: 0.8rem;
+  }
+
+  @media (max-width: 360px) {
+    gap: 1.4rem;
+  }
 `;
 
 const Header = styled.h4`
   color: var(--color-light);
   padding-bottom: 4rem;
+
+  @media (max-width: 540px) {
+    padding-bottom: 2rem;
+  }
 `;
 
 const BrandLogo = styled.img`
@@ -70,5 +98,33 @@ const BrandLogo = styled.img`
 
   @media (max-width: 1024px) {
     height: 1.2rem;
+  }
+
+  @media (max-width: 912px) {
+    height: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    height: 1.3rem;
+  }
+
+  @media (max-width: 540px) {
+    height: 1.2rem;
+  }
+
+  @media (max-width: 414px) {
+    height: 0.7rem;
+  }
+
+  @media (max-width: 375px) {
+    height: 1rem;
+  }
+
+  @media (max-width: 360px) {
+    height: 0.8rem;
+  }
+
+  @media (max-width: 280px) {
+    height: 0.6rem;
   }
 `;
