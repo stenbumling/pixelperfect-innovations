@@ -14,6 +14,15 @@ export default function TeamSection() {
   // Ref for the scroll container
   const galleryRef = useRef(null);
 
+  const handleHover = (index: number) => {
+    setActivePersonIndex(index);
+    setActivePerson(true);
+  };
+
+  const handleHoverLeave = () => {
+    setActivePerson(false);
+  };
+
   const handleSetActivePerson = (index: number) => {
     setActivePersonIndex(index);
     setActivePerson(true);
@@ -56,6 +65,8 @@ export default function TeamSection() {
                   className="team-card"
                   person={person}
                   key={index}
+                  onMouseEnter={() => handleHover(index)}
+                  onMouseLeave={handleHoverLeave}
                   $activePerson={index === activePersonIndex}
                   setActivePerson={() => handleSetActivePerson(index)}
                 ></TeamCard>

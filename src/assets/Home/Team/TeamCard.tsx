@@ -6,18 +6,24 @@ interface Props {
   $activePerson: boolean;
   setActivePerson: () => void;
   className?: string;
+  onMouseEnter: () => void;
+  onMouseLeave: () => void;
 }
 export default function TeamCard({
   person: { name, image },
   $activePerson,
   setActivePerson,
   className,
+  onMouseEnter,
+  onMouseLeave,
 }: Props) {
   return (
     <Card
       className={className}
       $activePerson={$activePerson}
       onClick={() => setActivePerson()}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
     >
       <img src={image} alt={name} />
       <span>{name}</span>
