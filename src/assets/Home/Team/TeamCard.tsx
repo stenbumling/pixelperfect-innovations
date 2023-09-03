@@ -5,14 +5,20 @@ interface Props {
   person: TeamMember;
   $activePerson: boolean;
   setActivePerson: () => void;
+  className?: string;
 }
 export default function TeamCard({
   person: { name, image },
   $activePerson,
   setActivePerson,
+  className,
 }: Props) {
   return (
-    <Card $activePerson={$activePerson} onClick={() => setActivePerson()}>
+    <Card
+      className={className}
+      $activePerson={$activePerson}
+      onClick={() => setActivePerson()}
+    >
       <img src={image} alt={name} />
       <span>{name}</span>
     </Card>
@@ -24,6 +30,7 @@ const Card = styled.div<{ $activePerson: boolean }>`
   display: flex;
   flex-direction: column;
   position: relative;
+  transition: 0.2s 0.4s ease-in-out;
   span {
     position: absolute;
     bottom: 0;
@@ -36,6 +43,10 @@ const Card = styled.div<{ $activePerson: boolean }>`
       font-size: var(--font-size-xs);
     }
   }
+  &:hover,
+  &:focus {
+    transition: 0.4s ease;
+  }
 
   img {
     flex: 1;
@@ -43,13 +54,13 @@ const Card = styled.div<{ $activePerson: boolean }>`
     max-height: 376px;
     max-width: 255px;
     cursor: pointer;
-    transition: 0.4s ease;
+    transition: 0.6s ease;
     opacity: ${({ $activePerson }) => ($activePerson ? 1 : 0.5)};
 
-    &:hover,
-    &:focus {
-      transition: 0.4s ease;
-      opacity: 1;
+    @media (max-width: 1191px) {
+      height: 40vh;
+      max-width: 360px;
+      max-height: none;
     }
   }
 `;

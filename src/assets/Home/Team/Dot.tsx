@@ -24,7 +24,7 @@ const StyledDot = styled.div<{ $activePerson: boolean }>`
   background-color: var(--color-accent);
   opacity: ${({ $activePerson }) => ($activePerson ? 1 : 0.5)};
   display: none;
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     display: block;
   }
 `;
