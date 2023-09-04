@@ -77,13 +77,17 @@ const ProfileHeading = styled.div`
     padding-bottom: 1rem;
     white-space: nowrap;
     padding-top: 3rem;
+
+    @media (max-width: 1024px) {
+      padding-top: 2rem;
+    }
   }
 `;
 
 const ImageAndDescription = styled.div`
   display: flex;
   align-self: flex-end;
-  gap: 1rem;
+  gap: 1.5rem;
 `;
 
 const DescriptionAndLink = styled.div`
@@ -101,6 +105,10 @@ const DescriptionAndLink = styled.div`
     align-self: end;
     font-size: 0.875rem;
     text-align: right;
+
+    @media (max-width: 1024px) {
+      top: 53%;
+    }
   }
 `;
 
@@ -116,6 +124,10 @@ const StyledNavLink = styled(NavLink)`
   position: absolute;
   right: -80%;
   top: 95%;
+
+  @media (max-width: 1024px) {
+    top: 94%;
+  }
 
   img {
     width: 1.6rem;
@@ -136,6 +148,10 @@ const StyledNavLink = styled(NavLink)`
 
 const ProfileImage = styled.img`
   width: 20rem;
+
+  @media (max-width: 1024px) {
+    width: 16rem;
+  }
 `;
 
 const ListOfSkills = styled.ul`
@@ -144,10 +160,16 @@ const ListOfSkills = styled.ul`
   list-style-type: none;
   font-weight: 500;
   font-size: var(--font-size-s);
+  padding-right: 7rem;
+
+  @media (max-width: 1024px) {
+    padding-right: 3rem;
+  }
 `;
 
 const SpecificSkill = styled.li`
   position: relative;
+  padding: 0.5rem;
   &::before {
     content: '• ';
     position: absolute;
