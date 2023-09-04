@@ -2,7 +2,6 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useState } from "react";
 import styled from "styled-components";
 import * as Yup from "yup";
-import logo from "/icons/logo.svg";
 
 export interface FormValues {
   firstName: string;
@@ -40,6 +39,7 @@ const schema = Yup.object().shape({
 export default function ContactSection() {
   const [isSent, setSent] = useState(false);
   const [transitionStatus, setTransitionStatus] = useState(false);
+  const [firstName, setFirstName] = useState("");
 
   const handleTransition = () => {
     setTransitionStatus(true);
@@ -60,6 +60,7 @@ export default function ContactSection() {
     }
   ) => {
     handleTransition();
+    setFirstName(data.firstName);
     setTimeout(() => {
       resetForm();
       setSubmitting(false);
@@ -150,7 +151,7 @@ export default function ContactSection() {
         ) : (
           <>
             <div className="grid-container">
-              <Title>Thank you for reaching out to us!</Title>
+              <Title>Thank you for reaching out to us, {firstName}!</Title>
             </div>
             <div className="grid-container">
               <div className="grid">
@@ -161,14 +162,12 @@ export default function ContactSection() {
                   <a href="/cases">cases section</a>, or have a look at some of
                   my other team members in the <a href="/team">team section</a>.
                 </Paragraph>
-                <Paragraph style={{ marginBottom: "1rem" }}>
+                <Paragraph style={{ marginBottom: "0rem" }}>
                   See you soon,
                 </Paragraph>
-                <img
-                  style={{ maxWidth: "108px", mixBlendMode: "difference" }}
-                  src={logo}
-                  alt=""
-                />
+                <Paragraph style={{fontWeight: "bold"}}>
+                  Elenaor
+                </Paragraph>
               </div>
             </div>
           </>
@@ -185,7 +184,7 @@ const Title = styled.h3`
   padding-top: 6rem;
 `;
 
-const Paragraph = styled.h5`
+const Paragraph = styled.p`
   margin-bottom: 1.4rem;
   max-width: 800px;
 `;
