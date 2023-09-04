@@ -1,15 +1,18 @@
-import { useState } from "react";
 import styled from "styled-components";
 
-export default function BurgerMenu() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
+interface BurgerMenuProps {
+  toggleMenu: () => void;
+  menuOpen: boolean;
+}
+
+export default function BurgerMenu({ toggleMenu, menuOpen }: BurgerMenuProps) {
+  const handleToggleMenu = () => {
+    toggleMenu();
   };
 
   return (
     <>
-      <StyledBurgerMenu onClick={toggleMenu}>
+      <StyledBurgerMenu onClick={handleToggleMenu}>
         <Burger $menuOpen={menuOpen} />
       </StyledBurgerMenu>
     </>

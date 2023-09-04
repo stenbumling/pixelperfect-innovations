@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import teamMembers from "../../../../data/team";
+import { SectionProps } from "../App";
 import Dot from "./Dot";
 import TeamCard from "./TeamCard";
 import TeamText from "./TeamText";
 
-export default function TeamSection() {
+export default function TeamSection({ id }: SectionProps) {
   const [activePersonIndex, setActivePersonIndex] = useState(0);
   const [activePerson, setActivePerson] = useState(false);
   const [scrollContainer, setScrollContainer] = useState<HTMLDivElement | null>(
@@ -52,7 +53,7 @@ export default function TeamSection() {
   }, []);
 
   return (
-    <>
+    <div id={id}>
       <Container>
         <div className="grid-container">
           <Title>Meet the team</Title>
@@ -95,7 +96,7 @@ export default function TeamSection() {
           </div>
         </div>
       </Container>
-    </>
+    </div>
   );
 }
 

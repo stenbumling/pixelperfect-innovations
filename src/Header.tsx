@@ -2,13 +2,18 @@ import styled from "styled-components";
 import BurgerMenu from "./BurgerMenu";
 import logo from "/icons/logo.svg";
 
-export default function Header() {
+interface HeaderProps {
+  toggleMenu: () => void;
+  menuOpen: boolean;
+}
+
+export default function Header({ toggleMenu, menuOpen }: HeaderProps) {
   return (
     <>
       <Container className="grid-container">
         <HeaderInner className="grid">
           <img src={logo} alt="" />
-          <BurgerMenu />
+          <BurgerMenu toggleMenu={toggleMenu} menuOpen={menuOpen} />
         </HeaderInner>
       </Container>
     </>
@@ -20,7 +25,7 @@ const Container = styled.div`
   position: fixed;
   mix-blend-mode: difference;
   width: 100%;
-  z-index: 100;
+  z-index: 999;
 `;
 
 const HeaderInner = styled.div`

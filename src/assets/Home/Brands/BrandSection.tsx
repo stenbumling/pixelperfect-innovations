@@ -1,8 +1,9 @@
 import styled from "styled-components";
+import { SectionProps } from "../App";
 
-export default function BrandSection() {
+export default function BrandSection({ id }: SectionProps) {
   return (
-    <Background>
+    <Background id={id}>
       <div className="grid-container">
         <div className="grid">
           <Heading>Clients we've worked with</Heading>
