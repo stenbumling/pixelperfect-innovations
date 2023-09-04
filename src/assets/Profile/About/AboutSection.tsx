@@ -12,11 +12,13 @@ export default function AboutSection() {
   }
 
   return (
-    <div>
+    <Background>
       <div className="grid-container">
         <div className="grid">
-          <h2>About {teamMember.name}</h2>
-          <h5>{teamMember.jobTitle}</h5>
+          <AboutHeader>
+            <h2>About {teamMember.name}</h2>
+            <h5>{teamMember.jobTitle}</h5>
+          </AboutHeader>
           <img src={teamMember.image} alt={teamMember.name} />
           <p>{teamMember.description}</p>
           <ListOfSkills>
@@ -27,9 +29,18 @@ export default function AboutSection() {
           <p>{teamMember.presentation}</p>
         </div>
       </div>
-    </div>
+    </Background>
   );
 }
+
+const Background = styled.div`
+  height: 100vh;
+  background: var(--color-dark);
+`;
+
+const AboutHeader = styled.h4`
+  color: var(--color-light);
+`;
 
 const ListOfSkills = styled.ul`
   display: flex;
