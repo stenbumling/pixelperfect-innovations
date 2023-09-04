@@ -78,21 +78,30 @@ export default function ContactSection() {
                     First Name <span className="required">*</span>
                   </span>
                   <Field type="text" name="firstName" />
-                  <ErrorMessage name="firstName" />
+                  <ErrorText>
+                    <ErrorMessage name="firstName" />
+                  </ErrorText>
                 </label>
                 <label>
                   <span>
                     Last Name <span className="required">*</span>
                   </span>
                   <Field type="text" name="lastName" />
-                  <ErrorMessage name="lastName" />
+                  <ErrorText>
+                    <ErrorMessage
+                      className="validation-error-message"
+                      name="lastName"
+                    />
+                  </ErrorText>
                 </label>
               </ContactFormRow>
               <ContactFormRow>
                 <label>
                   <span>Company</span>
                   <Field type="text" name="company" />
-                  <ErrorMessage name="company" />
+                  <ErrorText>
+                    <ErrorMessage name="company" />
+                  </ErrorText>
                 </label>
               </ContactFormRow>
               <ContactFormRow>
@@ -101,7 +110,9 @@ export default function ContactSection() {
                     Email Address <span className="required">*</span>
                   </span>
                   <Field type="email" name="email" />
-                  <ErrorMessage name="email" />
+                  <ErrorText>
+                    <ErrorMessage name="email" />
+                  </ErrorText>
                 </label>
               </ContactFormRow>
               <ContactFormRow>
@@ -110,7 +121,9 @@ export default function ContactSection() {
                     Message <span className="required">*</span>
                   </span>
                   <Field as="textarea" name="message" />
-                  <ErrorMessage name="message" />
+                  <ErrorText>
+                    <ErrorMessage name="message" />
+                  </ErrorText>
                 </label>
               </ContactFormRow>
               <button type="submit">Send Message</button>
@@ -167,4 +180,10 @@ const ContactFormRow = styled.div`
   .required {
     color: #a92801;
   }
+`;
+
+const ErrorText = styled.div`
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
 `;
