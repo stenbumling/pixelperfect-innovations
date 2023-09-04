@@ -14,7 +14,7 @@ const schema = Yup.object().shape({
   firstName: Yup.string()
     .min(2, "Please make sure your first name is at least 2 letters.")
     .max(200, "That's a bit too long. Try shortening it.")
-    .required("No need to be shy. We're PixelPerfect, what's your name?"),
+    .required("No need to be shy. What's your name?"),
   lastName: Yup.string()
     .min(2, "Please make sure your last name is at least 2 letters.")
     .max(200, "That's a bit too long. Try shortening it.")
@@ -32,7 +32,7 @@ const schema = Yup.object().shape({
     )
     .required("We need your email address to get back to you."),
   message: Yup.string()
-    .min(10, "Please give us a bit more information.")
+    .min(10, "Please give us a bit more information about your request.")
     .max(10000, "That's a bit too long. Try shortening it.")
     .required("Please write us a message, we'd love to hear from you!"),
 });
@@ -77,7 +77,7 @@ export default function ContactSection() {
                   <span>
                     First Name <span className="required">*</span>
                   </span>
-                  <Field type="text" name="firstName" />
+                  <StyledField type="text" name="firstName" />
                   <ErrorText>
                     <ErrorMessage name="firstName" />
                   </ErrorText>
@@ -86,7 +86,7 @@ export default function ContactSection() {
                   <span>
                     Last Name <span className="required">*</span>
                   </span>
-                  <Field type="text" name="lastName" />
+                  <StyledField type="text" name="lastName" />
                   <ErrorText>
                     <ErrorMessage
                       className="validation-error-message"
@@ -98,7 +98,7 @@ export default function ContactSection() {
               <ContactFormRow>
                 <label>
                   <span>Company</span>
-                  <Field type="text" name="company" />
+                  <StyledField type="text" name="company" />
                   <ErrorText>
                     <ErrorMessage name="company" />
                   </ErrorText>
@@ -109,7 +109,7 @@ export default function ContactSection() {
                   <span>
                     Email Address <span className="required">*</span>
                   </span>
-                  <Field type="email" name="email" />
+                  <StyledField type="email" name="email" />
                   <ErrorText>
                     <ErrorMessage name="email" />
                   </ErrorText>
@@ -120,7 +120,16 @@ export default function ContactSection() {
                   <span>
                     Message <span className="required">*</span>
                   </span>
-                  <Field as="textarea" name="message" />
+                  <Field
+                    as="textarea"
+                    name="message"
+                    maxLength="10000"
+                    style={{
+                      fontFamily: '"Space Grotesk", sans-serif',
+                      padding: "8px",
+                      boxSizing: "border-box",
+                    }}
+                  />
                   <ErrorText>
                     <ErrorMessage name="message" />
                   </ErrorText>
@@ -180,6 +189,12 @@ const ContactFormRow = styled.div`
   .required {
     color: #a92801;
   }
+`;
+
+const StyledField = styled(Field)`
+  font-family: "Space Grotesk", sans-serif;
+  padding: 8px;
+  box-sizing: border-box;
 `;
 
 const ErrorText = styled.div`
