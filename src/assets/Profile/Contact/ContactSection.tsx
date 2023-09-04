@@ -5,7 +5,6 @@ import * as Yup from "yup";
 export interface FormValues {
   firstName: string;
   lastName: string;
-  company: string;
   email: string;
   message: string;
 }
@@ -21,7 +20,6 @@ const schema = Yup.object().shape({
     .required(
       "To make this process a bit smoother, we also need your last name."
     ),
-  company: Yup.string().max(200, "That's a bit too long. Try shortening it."),
   email: Yup.string()
     .email(
       "Hmm, that doesn't look quite right. Your email address should look like something like this: example@company.se"
@@ -64,7 +62,6 @@ export default function ContactSection() {
             initialValues={{
               firstName: "",
               lastName: "",
-              company: "",
               email: "",
               message: "",
             }}
@@ -92,15 +89,6 @@ export default function ContactSection() {
                       className="validation-error-message"
                       name="lastName"
                     />
-                  </ErrorText>
-                </label>
-              </ContactFormRow>
-              <ContactFormRow>
-                <label>
-                  <span style={{fontWeight: "bold"}}>Company</span>
-                  <StyledField type="text" name="company" />
-                  <ErrorText>
-                    <ErrorMessage name="company" />
                   </ErrorText>
                 </label>
               </ContactFormRow>
