@@ -161,12 +161,12 @@ export default function ContactSection() {
                   the many projects we've brought to life together with our partners? Or perhaps get to know
                   my colleagues a little better in the <a href="/team">team section</a>?
                 </Paragraph>
-                <Paragraph style={{ marginBottom: "0rem", fontWeight: "bold" }}>
-                  See you soon!
+                <Paragraph style={{ marginBottom: "0rem" }}>
+                  See you soon,
                 </Paragraph>
-                {/* <Paragraph style={{fontWeight: "bold"}}>
-                  Elenaor
-                </Paragraph> */}
+                <Paragraph style={{fontWeight: "bold"}}>
+                  Your new business partner
+                </Paragraph>
               </div>
             </div>
           </>
