@@ -1,5 +1,6 @@
 import Footer from "../../Footer";
 import Header from "../../Header";
+import BrandSection from "./Brands/BrandSection";
 import CaseSection from "./Cases/CaseSection";
 import HeroSection from "./Hero/HeroSection";
 import MapSection from "./Map/MapSection";
@@ -11,7 +12,7 @@ function App() {
       <Header />
       <HeroSection />
       <TeamSection />
-      {/* <BrandSection /> */}
+      <BrandSection />
       <CaseSection />
       <MapSection />
       <Footer />
