@@ -1,15 +1,21 @@
 import styled from "styled-components";
 
 export default function ContactSection() {
+  const handleSubmit = (event: { preventDefault: () => void }) => {
+    event.preventDefault();
+    console.log("Your message has been sent!");
+    // createToast();
+    // cleanUpForm();
+  };
+
   return (
     <>
       <div className="grid-container">
         <Title>Contact me</Title>
       </div>
-
       <div className="grid-container">
         <div className="grid">
-          <ContactForm>
+          <ContactForm onSubmit={handleSubmit}>
             <ContactFormRow>
               <label>
                 <span>
@@ -46,6 +52,7 @@ export default function ContactSection() {
                 <textarea name="message" />
               </label>
             </ContactFormRow>
+            <button type="submit">Send Message</button>
           </ContactForm>
         </div>
       </div>
