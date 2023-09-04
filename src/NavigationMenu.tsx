@@ -8,14 +8,10 @@ const NavigationContainer = styled.div`
   height: 100vh;
   background-color: var(--color-dark);
   display: flex;
-  justify-content: center; /* Center on smaller screens */
-
+  justify-content: center;
   @media (min-width: 768px) {
-    justify-content: flex-end; /* Align to the right on larger screens */
+    justify-content: flex-end;
   }
-
-  /* Add margin to the right on larger screens */
-  padding-right: 1rem;
 `;
 
 const StyledNavigationMenu = styled.div`
@@ -42,8 +38,8 @@ const NavLink = styled.a`
 `;
 
 const Number = styled.span`
-  font-size: 1.5rem; /* Adjust the size of the number */
-  margin-right: 1rem; /* Add spacing between the number and the text */
+  font-size: 1.5rem;
+  margin-right: 1rem;
 `;
 
 interface NavigationMenuProps {
