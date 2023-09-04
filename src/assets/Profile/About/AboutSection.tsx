@@ -70,10 +70,18 @@ const TopSection = styled.div`
   @media (max-width: 768px) {
     flex-direction: column;
   }
+
+  @media (max-width: 640px) {
+    padding: 4rem 0 3rem;
+  }
 `;
 
 const ProfileHeading = styled.div`
   color: var(--color-light);
+
+  @media (max-width: 640px) {
+    padding-bottom: 1rem;
+  }
 
   h2 {
     font-size: var(--font-size-xl);
@@ -85,6 +93,10 @@ const ProfileHeading = styled.div`
     @media (max-width: 1024px) {
       padding-top: 2rem;
     }
+
+    @media (max-width: 640px) {
+      padding-bottom: 0.6rem;
+    }
   }
 `;
 
@@ -92,6 +104,12 @@ const ImageAndDescription = styled.div`
   display: flex;
   align-self: flex-end;
   gap: 1.5rem;
+
+  @media (max-width: 640px) {
+    flex-direction: column-reverse;
+    align-self: flex-start;
+    gap: 1rem;
+  }
 `;
 
 const DescriptionAndLink = styled.div`
@@ -113,6 +131,13 @@ const DescriptionAndLink = styled.div`
     @media (max-width: 1024px) {
       top: 53%;
     }
+
+    @media (max-width: 640px) {
+      position: static;
+      text-align: left;
+      align-self: flex-start;
+      width: 100%;
+    }
   }
 `;
 
@@ -131,6 +156,11 @@ const StyledNavLink = styled(NavLink)`
 
   @media (max-width: 1024px) {
     top: 94%;
+  }
+
+  @media (max-width: 640px) {
+    position: static;
+    padding-top: 0.5rem;
   }
 
   img {
@@ -155,6 +185,10 @@ const ProfileImage = styled.img`
 
   @media (max-width: 1024px) {
     width: 16rem;
+  }
+
+  @media (max-width: 640px) {
+    width: 100%;
   }
 `;
 
@@ -195,11 +229,15 @@ const BottomSection = styled.div`
   padding: 5rem 0;
   background: var(--color-light);
 
-  p {
-    max-width: 450px;
-  }
-
   @media (max-width: 768px) {
     flex-direction: column;
+  }
+
+  @media (max-width: 640px) {
+    padding: 3rem 0;
+  }
+
+  p {
+    max-width: 450px;
   }
 `;
