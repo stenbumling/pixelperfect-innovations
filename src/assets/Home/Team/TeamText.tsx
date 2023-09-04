@@ -56,6 +56,7 @@ const InfoSection = styled.div<{ $activePerson: boolean }>`
   display: flex;
   flex-direction: column;
   max-width: 480px;
+  padding-top: 1.2rem;
   display: ${({ $activePerson }) => ($activePerson ? "block" : "none")};
 
   h3 {

@@ -31,10 +31,13 @@ const Container = styled.div`
 const HeaderInner = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 2rem 0;
+  padding: 1.4rem 0;
+  img {
+    height: 35px;
+  }
 
   @media (max-width: 800px) {
-    padding: 1.5rem 0;
+    padding: 1.2rem 0;
 
     img {
       height: 30px;

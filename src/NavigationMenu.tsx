@@ -24,6 +24,7 @@ const StyledNavigationMenu = styled.div`
 
 const NavLink = styled.a`
   font-size: 4rem;
+  font-weight: 500;
   margin: 1rem 0;
   text-decoration: none;
   color: var(--color-darker-light);

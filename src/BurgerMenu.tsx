@@ -22,7 +22,7 @@ export default function BurgerMenu({ toggleMenu, menuOpen }: BurgerMenuProps) {
 const StyledBurgerMenu = styled.div`
   cursor: pointer;
   position: relative;
-  height: 2.1rem;
+  height: 2rem;
   z-index: 104;
   mix-blend-mode: difference;
   @media (max-width: 800px) {
@@ -31,7 +31,7 @@ const StyledBurgerMenu = styled.div`
 `;
 
 const Burger = styled.div<{ $menuOpen: boolean }>`
-  width: 2.9rem;
+  width: 2.7rem;
   height: 0.2rem;
   position: relative;
   top: 1rem;
@@ -53,7 +53,7 @@ const Burger = styled.div<{ $menuOpen: boolean }>`
 
   &::after {
     rotate: ${({ $menuOpen }) => ($menuOpen ? "45deg" : "0")};
-    top: ${({ $menuOpen }) => ($menuOpen ? "0" : "-0.9rem")};
+    top: ${({ $menuOpen }) => ($menuOpen ? "0" : "-.9rem")};
   }
 
   &::before {
@@ -69,12 +69,12 @@ const Burger = styled.div<{ $menuOpen: boolean }>`
     transform: translateY(-50%);
 
     &::after {
-      top: ${({ $menuOpen }) => ($menuOpen ? "0" : "-0.7rem")};
+      top: ${({ $menuOpen }) => ($menuOpen ? "0" : "-0.8rem")};
     }
 
     &::before {
       width: ${({ $menuOpen }) => ($menuOpen ? "2.2rem " : "1.2rem")};
-      top: ${({ $menuOpen }) => ($menuOpen ? "0" : "0.7rem")};
+      top: ${({ $menuOpen }) => ($menuOpen ? "0" : "0.8rem")};
     }
   }
 `;
