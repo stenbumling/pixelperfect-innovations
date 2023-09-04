@@ -39,6 +39,15 @@ const schema = Yup.object().shape({
 
 export default function ContactSection() {
   const [isSent, setSent] = useState(false);
+  const [transitionStatus, setTransitionStatus] = useState(false);
+
+  const handleTransition = () => {
+    setTransitionStatus(true);
+    setTimeout(() => {
+      setSent(true);
+      setTransitionStatus(false);
+    }, 200);
+  };
 
   const onSubmit = (
     data: FormValues,
@@ -50,113 +59,121 @@ export default function ContactSection() {
       resetForm: (nextState?: any) => void;
     }
   ) => {
-    setSent(true);
-    resetForm();
-    setSubmitting(false);
+    handleTransition();
+    setTimeout(() => {
+      resetForm();
+      setSubmitting(false);
+    }, 200);
   };
 
   return (
     <>
-      {!isSent ? (
-        <>
-          <div className="grid-container">
-            <Title>Contact me</Title>
-          </div>
-          <div className="grid-container">
-            <div className="grid">
-              <Formik
-                initialValues={{
-                  firstName: "",
-                  lastName: "",
-                  email: "",
-                  message: "",
-                }}
-                validationSchema={schema}
-                onSubmit={onSubmit}
-              >
-                <Form style={{ maxWidth: "1000px" }}>
-                  <ContactFormRow>
-                    <label>
-                      <span style={{ fontWeight: "bold" }}>
-                        First Name <span className="required">*</span>
-                      </span>
-                      <StyledField type="text" name="firstName" />
-                      <ErrorText>
-                        <ErrorMessage name="firstName" />
-                      </ErrorText>
-                    </label>
-                    <label>
-                      <span style={{ fontWeight: "bold" }}>
-                        Last Name <span className="required">*</span>
-                      </span>
-                      <StyledField type="text" name="lastName" />
-                      <ErrorText>
-                        <ErrorMessage
-                          className="validation-error-message"
-                          name="lastName"
+      <TransitionWrapper $transitionStatus={transitionStatus}>
+        {!isSent ? (
+          <>
+            <div className="grid-container">
+              <Title>Contact me</Title>
+            </div>
+            <div className="grid-container">
+              <div className="grid">
+                <Formik
+                  initialValues={{
+                    firstName: "",
+                    lastName: "",
+                    email: "",
+                    message: "",
+                  }}
+                  validationSchema={schema}
+                  onSubmit={onSubmit}
+                >
+                  <Form style={{ maxWidth: "1000px" }}>
+                    <ContactFormRow>
+                      <label>
+                        <span style={{ fontWeight: "bold" }}>
+                          First Name <span className="required">*</span>
+                        </span>
+                        <StyledField type="text" name="firstName" />
+                        <ErrorText>
+                          <ErrorMessage name="firstName" />
+                        </ErrorText>
+                      </label>
+                      <label>
+                        <span style={{ fontWeight: "bold" }}>
+                          Last Name <span className="required">*</span>
+                        </span>
+                        <StyledField type="text" name="lastName" />
+                        <ErrorText>
+                          <ErrorMessage
+                            className="validation-error-message"
+                            name="lastName"
+                          />
+                        </ErrorText>
+                      </label>
+                    </ContactFormRow>
+                    <ContactFormRow>
+                      <label>
+                        <span style={{ fontWeight: "bold" }}>
+                          Email Address <span className="required">*</span>
+                        </span>
+                        <StyledField type="email" name="email" />
+                        <ErrorText>
+                          <ErrorMessage name="email" />
+                        </ErrorText>
+                      </label>
+                    </ContactFormRow>
+                    <ContactFormRow>
+                      <label>
+                        <span style={{ fontWeight: "bold" }}>
+                          Message <span className="required">*</span>
+                        </span>
+                        <Field
+                          as="textarea"
+                          name="message"
+                          maxLength="10000"
+                          style={{
+                            fontFamily: '"Space Grotesk", sans-serif',
+                            padding: "8px",
+                            boxSizing: "border-box",
+                          }}
                         />
-                      </ErrorText>
-                    </label>
-                  </ContactFormRow>
-                  <ContactFormRow>
-                    <label>
-                      <span style={{ fontWeight: "bold" }}>
-                        Email Address <span className="required">*</span>
-                      </span>
-                      <StyledField type="email" name="email" />
-                      <ErrorText>
-                        <ErrorMessage name="email" />
-                      </ErrorText>
-                    </label>
-                  </ContactFormRow>
-                  <ContactFormRow>
-                    <label>
-                      <span style={{ fontWeight: "bold" }}>
-                        Message <span className="required">*</span>
-                      </span>
-                      <Field
-                        as="textarea"
-                        name="message"
-                        maxLength="10000"
-                        style={{
-                          fontFamily: '"Space Grotesk", sans-serif',
-                          padding: "8px",
-                          boxSizing: "border-box",
-                        }}
-                      />
-                      <ErrorText>
-                        <ErrorMessage name="message" />
-                      </ErrorText>
-                    </label>
-                  </ContactFormRow>
-                  <button type="submit">Send Message</button>
-                </Form>
-              </Formik>
+                        <ErrorText>
+                          <ErrorMessage name="message" />
+                        </ErrorText>
+                      </label>
+                    </ContactFormRow>
+                    <button type="submit">Send Message</button>
+                  </Form>
+                </Formik>
+              </div>
             </div>
-          </div>
-        </>
-      ) : (
-        <>
-          <div className="grid-container">
-            <Title>Thank you for reaching out to us!</Title>
-          </div>
-          <div className="grid-container">
-            <div className="grid">
-              <Paragraph>
-                I'm thrilled to hear from you, and I will get back to you as
-                soon as humanly possible. In the meanwhile, delve into projects
-                we've created with our partners in the{" "}
-                <a href="/cases">cases section</a>, or have a look at some of my
-                other team members in the <a href="/team">team section</a>.
-              </Paragraph>
-              <Paragraph style={{ marginBottom: "1rem" }}>
-                See you soon,
-              </Paragraph>
-              <img style={{ maxWidth: "108px", mixBlendMode: "difference"}} src={logo} alt="" />
+          </>
+        ) : (
+          <>
+            <div className="grid-container">
+              <Title>Thank you for reaching out to us!</Title>
             </div>
-          </div>
-        </>
-      )}
+            <div className="grid-container">
+              <div className="grid">
+                <Paragraph>
+                  I'm thrilled to hear from you, and I will get back to you as
+                  soon as humanly possible. In the meanwhile, delve into
+                  projects we've created with our partners in the{" "}
+                  <a href="/cases">cases section</a>, or have a look at some of
+                  my other team members in the <a href="/team">team section</a>.
+                </Paragraph>
+                <Paragraph style={{ marginBottom: "1rem" }}>
+                  See you soon,
+                </Paragraph>
+                <img
+                  style={{ maxWidth: "108px", mixBlendMode: "difference" }}
+                  src={logo}
+                  alt=""
+                />
+              </div>
+            </div>
+          </>
+        )}
+      </TransitionWrapper>
     </>
   );
 }
@@ -223,4 +240,9 @@ const ErrorText = styled.div`
   color: red;
   font-size: 12px;
   margin-top: 5px;
+`;
+
+const TransitionWrapper = styled.div<{ $transitionStatus: boolean }>`
+  transition: opacity 0.2s ease-in-out;
+  opacity: ${(props) => (props.$transitionStatus ? 0 : 1)};
 `;
