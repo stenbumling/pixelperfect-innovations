@@ -133,3 +133,8 @@ input {
   height: 40px;
   margin-top: 4px;
 }
+
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+}
