@@ -66,6 +66,10 @@ const TopSection = styled.div`
   align-items: flex-start;
   justify-content: space-between;
   padding: 8rem 0 6rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const ProfileHeading = styled.div`
@@ -165,6 +169,10 @@ const ListOfSkills = styled.ul`
   @media (max-width: 1024px) {
     padding-right: 3rem;
   }
+
+  @media (max-width: 768px) {
+    padding: 1rem 0 0 1rem;
+  }
 `;
 
 const SpecificSkill = styled.li`
@@ -189,5 +197,9 @@ const BottomSection = styled.div`
 
   p {
     max-width: 450px;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
   }
 `;
