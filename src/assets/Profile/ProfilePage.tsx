@@ -1,5 +1,13 @@
+import AboutSection from "./About/AboutSection";
+import ContactSection from "./Contact/ContactSection";
+
 function ProfilePage() {
-  return <div>Hello!</div>;
+  return (
+    <>
+      <AboutSection />
+      <ContactSection />
+    </>
+  );
 }
 
 export default ProfilePage;
