@@ -182,6 +182,7 @@ const Title = styled.h3`
   grid-column: main;
   font-size: var(--font-size-m);
   padding-bottom: 2rem;
+  padding-top: 6rem;
 `;
 
 const Paragraph = styled.h5`
@@ -245,4 +246,5 @@ const ErrorText = styled.div`
 const TransitionWrapper = styled.div<{ $transitionStatus: boolean }>`
   transition: opacity 0.2s ease-in-out;
   opacity: ${(props) => (props.$transitionStatus ? 0 : 1)};
+  margin-bottom: 14rem;
 `;
