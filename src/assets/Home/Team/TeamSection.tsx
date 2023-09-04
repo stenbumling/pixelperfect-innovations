@@ -76,7 +76,7 @@ const Carousel = styled.div`
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 6rem 0;
+  padding: 6rem 0 0;
 `;
 
 const DotContainer = styled.div`
