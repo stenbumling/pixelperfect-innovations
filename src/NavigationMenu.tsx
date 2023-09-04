@@ -9,6 +9,7 @@ const NavigationContainer = styled.div`
   background-color: var(--color-dark);
   display: flex;
   justify-content: center;
+  z-index: 800;
   @media (min-width: 768px) {
     justify-content: center;
   }
@@ -18,7 +19,7 @@ const StyledNavigationMenu = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  z-index: 100;
+  z-index: 1000;
 `;
 
 const NavLink = styled.a`
