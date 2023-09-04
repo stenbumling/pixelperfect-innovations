@@ -9,13 +9,25 @@ const NavigationContainer = styled.div`
   background-color: var(--color-dark);
   display: flex;
   justify-content: center;
+  padding-top: 2rem;
   z-index: 800;
+  overflow-y: auto;
   @media (min-width: 768px) {
     justify-content: center;
   }
 `;
 
+const Container = styled.div`
+  display: flex;
+  justify-content: flex-end;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
+`;
+
 const StyledNavigationMenu = styled.div`
+  margin-top: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -31,18 +43,90 @@ const NavLink = styled.a`
   transition: font-size 0.3s, color 0.3s;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid var(--color-darker-light);
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+
+  @media (max-height: 660px) {
+    font-size: 2.5rem;
+    margin: 0.5rem 0;
+  }
+
+  @media (max-height: 540px) {
+    font-size: 2rem;
+    margin: 0.3rem 0;
+  }
+
+  @media (max-height: 430px) {
+    font-size: 1.5rem;
+    margin: 0.2rem 0;
+  }
+
+  @media (max-height: 390px) {
+    font-size: 1rem;
+    margin: 0.1rem 0;
+  }
 
   &:hover {
     font-size: 4.2rem;
     color: var(--color-white);
+
+    @media (max-width: 768px) {
+      font-size: 2.2rem;
+    }
+
+    @media (max-height: 660px) {
+      font-size: 2.7rem;
+    }
+
+    @media (max-height: 540px) {
+      font-size: 2.2rem;
+    }
+
+    @media (max-height: 430px) {
+      font-size: 1.7rem;
+    }
+
+    @media (max-height: 390px) {
+      font-size: 1.2rem;
+    }
+  }
+`;
+
+const Divider = styled.div`
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-darker-light);
+  margin: 0.5rem 0;
+
+  @media (max-height: 660px) {
+    margin: 0.3rem 0;
+  }
+
+  @media (max-height: 540px) {
+    margin: 0.2rem 0;
+  }
+
+  @media (max-height: 430px) {
+    margin: 0.1rem 0;
+  }
+
+  @media (max-height: 390px) {
+    margin: 0.05rem 0;
   }
 `;
 
 const Number = styled.span`
   font-size: 1rem;
-  margin-right: 1rem;
+  margin-right: 8rem;
   margin-bottom: 2rem;
+
+  @media (max-width: 768px) {
+    font-size: 0.7rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+  }
 `;
 
 interface NavigationMenuProps {
@@ -65,20 +149,29 @@ function NavigationMenu({
 
   return (
     <NavigationContainer>
-      <StyledNavigationMenu>
-        <NavLink href="#team" onClick={handleLinkClick}>
-          <Number>01</Number> Meet the team
-        </NavLink>
-        <NavLink href="#clients" onClick={handleLinkClick}>
-          <Number>02</Number> Clients
-        </NavLink>
-        <NavLink href="#cases" onClick={handleLinkClick}>
-          <Number>03</Number> Client cases
-        </NavLink>
-        <NavLink href="#map" onClick={handleLinkClick}>
-          <Number>04</Number> Find us
-        </NavLink>
-      </StyledNavigationMenu>
+      <div className="grid-container">
+        <div className="grid">
+          <Container>
+            <StyledNavigationMenu>
+              <NavLink href="#team" onClick={handleLinkClick}>
+                <Number>01</Number> Meet the team
+              </NavLink>
+              <Divider />
+              <NavLink href="#clients" onClick={handleLinkClick}>
+                <Number>02</Number> Clients
+              </NavLink>
+              <Divider />
+              <NavLink href="#cases" onClick={handleLinkClick}>
+                <Number>03</Number> Client cases
+              </NavLink>
+              <Divider />
+              <NavLink href="#map" onClick={handleLinkClick}>
+                <Number>04</Number> Find us
+              </NavLink>
+            </StyledNavigationMenu>
+          </Container>
+        </div>
+      </div>
     </NavigationContainer>
   );
 }
