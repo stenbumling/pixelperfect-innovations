@@ -1,6 +1,7 @@
-import { useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import teamMembers from '../../../../data/team';
+import arrow from '/icons/arrow.svg';
 
 export default function AboutSection() {
   const { id } = useParams();
@@ -22,7 +23,12 @@ export default function AboutSection() {
                 <h5>{teamMember.jobTitle}</h5>
               </ProfileHeading>
               <ImageAndDescription>
-                <p>{teamMember.description}</p>
+                <DescriptionAndLink>
+                  <p>{teamMember.description}</p>
+                  <StyledNavLink to={`/profile/${id}`}>
+                    Let's talk <img src={arrow} alt="arrow" />
+                  </StyledNavLink>
+                </DescriptionAndLink>
                 <ProfileImage src={teamMember.image} alt={teamMember.name} />
               </ImageAndDescription>
             </TopSection>
@@ -77,17 +83,52 @@ const ImageAndDescription = styled.div`
   display: flex;
   align-self: flex-end;
   gap: 1rem;
+`;
+
+const DescriptionAndLink = styled.div`
+  display: flex;
+  flex-direction: column;
   position: relative;
 
   p {
     position: absolute;
     left: -100%;
+    top: 62%;
     max-width: 18.75rem;
     min-width: 15rem;
     color: var(--color-light);
     align-self: end;
     font-size: 0.875rem;
     text-align: right;
+  }
+`;
+
+const StyledNavLink = styled(NavLink)`
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  white-space: nowrap;
+  font-size: 1.3rem;
+  text-decoration: none;
+  font-weight: 800;
+  color: var(--color-light);
+  position: relative;
+  top: 95%;
+
+  img {
+    width: 1.6rem;
+    height: auto;
+    @media (max-width: 800px) {
+      width: 1rem;
+    }
+  }
+
+  a {
+    font-size: var(--font-size-m);
+  }
+
+  @media (max-width: 800px) {
+    font-size: 1rem;
   }
 `;
 
