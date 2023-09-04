@@ -68,4 +68,15 @@ const ContactFormRow = styled.div`
       margin-right: 14px;
     }
   }
+
+  @media (max-width: 650px) {
+    &:first-child {
+      flex-direction: column;
+
+      & > *:first-child {
+        margin-right: 0;
+        margin-bottom: 26px;
+      }
+    }
+  }
 `;
