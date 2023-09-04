@@ -1,5 +1,13 @@
+import Footer from '../../Footer';
+import Header from '../../Header';
+
 function ProfilePage() {
-  return <div>Hello!</div>;
+  return (
+    <>
+      <Header />
+      <Footer />
+    </>
+  );
 }
 
 export default ProfilePage;
