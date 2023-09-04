@@ -1,11 +1,11 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export default function BrandSection() {
   return (
     <Background>
       <div className="grid-container">
         <div className="grid">
-          <Header>Clients we've worked with</Header>
+          <Heading>Clients we've worked with</Heading>
         </div>
       </div>
       <BrandContainer>
@@ -43,7 +43,7 @@ export default function BrandSection() {
 
 const Background = styled.div`
   background: var(--color-dark);
-  padding: 9rem 0;
+  padding: 12rem 0 14rem;
 `;
 
 const BrandContainer = styled.div`
@@ -83,7 +83,7 @@ const BrandContainer = styled.div`
   }
 `;
 
-const Header = styled.h4`
+const Heading = styled.h4`
   color: var(--color-light);
   padding-bottom: 4rem;
 
