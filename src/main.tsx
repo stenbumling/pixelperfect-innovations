@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createRoutesFromElements, Route } from "react-router";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import App from "./assets/Home/App";
+import App from "./App";
 import ProfilePage from "./assets/Profile/ProfilePage";
 import "./index.css";
 
