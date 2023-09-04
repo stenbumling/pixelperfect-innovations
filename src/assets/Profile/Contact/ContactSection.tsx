@@ -157,17 +157,16 @@ export default function ContactSection() {
               <div className="grid">
                 <Paragraph>
                   I'm thrilled to hear from you, and I will get back to you as
-                  soon as humanly possible. In the meanwhile, delve into
-                  projects we've created with our partners in the{" "}
-                  <a href="/cases">cases section</a>, or have a look at some of
-                  my other team members in the <a href="/team">team section</a>.
+                  soon as humanly possible. In the meanwhile, why not delve into the <a href="/cases">cases section</a> and have a look at some of
+                  the many projects we've brought to life together with our partners? Or perhaps get to know
+                  my colleagues a little better in the <a href="/team">team section</a>?
                 </Paragraph>
-                <Paragraph style={{ marginBottom: "0rem" }}>
-                  See you soon,
+                <Paragraph style={{ marginBottom: "0rem", fontWeight: "bold" }}>
+                  See you soon!
                 </Paragraph>
-                <Paragraph style={{fontWeight: "bold"}}>
+                {/* <Paragraph style={{fontWeight: "bold"}}>
                   Elenaor
-                </Paragraph>
+                </Paragraph> */}
               </div>
             </div>
           </>
@@ -186,7 +185,7 @@ const Title = styled.h3`
 
 const Paragraph = styled.p`
   margin-bottom: 1.4rem;
-  max-width: 800px;
+  max-width: 750px;
 `;
 
 const ContactFormRow = styled.div`
