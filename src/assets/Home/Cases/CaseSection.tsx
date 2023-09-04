@@ -1,12 +1,9 @@
 import styled from "styled-components";
 import cases from "../../../../data/case";
+import { SectionProps } from "../App";
 import CaseCard from "./CaseCard";
 
-interface CaseSectionProps {
-  id: string;
-}
-
-export default function CaseSection({ id }: CaseSectionProps) {
+export default function CaseSection({ id }: SectionProps) {
   return (
     <div id={id}>
       <OuterGridContainer className="grid-container">

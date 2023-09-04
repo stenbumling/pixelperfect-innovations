@@ -8,7 +8,7 @@ import HeroSection from "./Hero/HeroSection";
 import MapSection from "./Map/MapSection";
 import TeamSection from "./Team/TeamSection";
 
-interface SectionProps {
+export interface SectionProps {
   id: string;
 }
 
@@ -27,7 +27,7 @@ function App() {
       )}
       <HeroSection id="hero" />
       <TeamSection id="team" />
-      <BrandSection />
+      <BrandSection id="clients" />
       <CaseSection id="cases" />
       <MapSection id="map" />
       <Footer />

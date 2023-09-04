@@ -1,11 +1,8 @@
 import { IconArrowRight } from "@tabler/icons-react";
 import styled, { css } from "styled-components";
+import { SectionProps } from "../App";
 
-interface HeroSectionProps {
-  id: string;
-}
-
-function HeroSection({ id }: HeroSectionProps) {
+function HeroSection({ id }: SectionProps) {
   return (
     <Background id={id}>
       <div className="grid-container">

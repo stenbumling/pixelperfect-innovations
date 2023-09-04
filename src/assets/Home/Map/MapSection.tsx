@@ -1,12 +1,9 @@
 import { useLoadScript } from "@react-google-maps/api";
 import styled from "styled-components";
+import { SectionProps } from "../App";
 import InteractiveMap from "./InteractiveMap";
 
-interface MapSectionProps {
-  id: string;
-}
-
-export default function MapSection({ id }: MapSectionProps) {
+export default function MapSection({ id }: SectionProps) {
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
   });

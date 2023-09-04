@@ -1,15 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import teamMembers from "../../../../data/team";
+import { SectionProps } from "../App";
 import Dot from "./Dot";
 import TeamCard from "./TeamCard";
 import TeamText from "./TeamText";
 
-interface TeamSectionProps {
-  id: string;
-}
-
-export default function TeamSection({ id }: TeamSectionProps) {
+export default function TeamSection({ id }: SectionProps) {
   const [activePersonIndex, setActivePersonIndex] = useState(0);
   const [activePerson, setActivePerson] = useState(false);
   const [scrollContainer, setScrollContainer] = useState<HTMLDivElement | null>(
