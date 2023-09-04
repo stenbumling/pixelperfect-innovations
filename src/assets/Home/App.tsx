@@ -7,12 +7,18 @@ import MapSection from "./Map/MapSection";
 import TeamSection from "./Team/TeamSection";
 
 function App() {
-  const { menuOpen, toggleMenu } = useHeaderNavigation();
+  const { menuOpen, toggleMenu, closeMenu } = useHeaderNavigation();
 
   return (
     <>
-      <Header toggleMenu={toggleMenu} />
-      {menuOpen && <NavigationMenu toggleMenu={toggleMenu} isOpen={menuOpen} />}
+      <Header toggleMenu={toggleMenu} menuOpen={menuOpen} />
+      {menuOpen && (
+        <NavigationMenu
+          isOpen={menuOpen}
+          toggleMenu={toggleMenu}
+          closeMenu={closeMenu}
+        />
+      )}
       <HeroSection />
       <TeamSection />
       {/* <BrandSection /> */}

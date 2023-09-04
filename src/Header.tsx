@@ -4,15 +4,16 @@ import logo from "/icons/logo.svg";
 
 interface HeaderProps {
   toggleMenu: () => void;
+  menuOpen: boolean;
 }
 
-export default function Header({ toggleMenu }: HeaderProps) {
+export default function Header({ toggleMenu, menuOpen }: HeaderProps) {
   return (
     <>
       <Container className="grid-container">
         <HeaderInner className="grid">
           <img src={logo} alt="" />
-          <BurgerMenu toggleMenu={toggleMenu} />
+          <BurgerMenu toggleMenu={toggleMenu} menuOpen={menuOpen} />
         </HeaderInner>
       </Container>
     </>

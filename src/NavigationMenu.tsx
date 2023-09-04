@@ -1,4 +1,3 @@
-import { useState } from "react";
 import styled from "styled-components";
 
 const NavigationContainer = styled.div`
@@ -48,17 +47,19 @@ const Number = styled.span`
 interface NavigationMenuProps {
   isOpen: boolean;
   toggleMenu: () => void;
+  closeMenu: () => void;
 }
 
-function NavigationMenu({ isOpen, toggleMenu }: NavigationMenuProps) {
-  const [menuOpen, setMenuOpen] = useState(false);
-
+function NavigationMenu({
+  isOpen,
+  toggleMenu,
+  closeMenu,
+}: NavigationMenuProps) {
   if (!isOpen) return null;
 
   const handleLinkClick = () => {
-    setMenuOpen(!menuOpen);
+    closeMenu();
     toggleMenu();
-    console.log("clicked");
   };
 
   return (

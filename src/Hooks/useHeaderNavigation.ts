@@ -7,8 +7,13 @@ export function useHeaderNavigation() {
     setMenuOpen(!menuOpen);
   };
 
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   return {
     menuOpen,
     toggleMenu,
+    closeMenu,
   };
 }

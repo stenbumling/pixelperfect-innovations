@@ -1,15 +1,12 @@
-import { useState } from "react";
 import styled from "styled-components";
 
 interface BurgerMenuProps {
   toggleMenu: () => void;
+  menuOpen: boolean;
 }
 
-export default function BurgerMenu({ toggleMenu }: BurgerMenuProps) {
-  const [menuOpen, setMenuOpen] = useState(false);
-
+export default function BurgerMenu({ toggleMenu, menuOpen }: BurgerMenuProps) {
   const handleToggleMenu = () => {
-    setMenuOpen(!menuOpen);
     toggleMenu();
   };
 
