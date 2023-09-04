@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const StyledNavigationMenu = styled.div`
+const NavigationContainer = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -8,13 +8,42 @@ const StyledNavigationMenu = styled.div`
   height: 100vh;
   background-color: var(--color-dark);
   display: flex;
+  justify-content: center; /* Center on smaller screens */
+
+  @media (min-width: 768px) {
+    justify-content: flex-end; /* Align to the right on larger screens */
+  }
+
+  /* Add margin to the right on larger screens */
+  padding-right: 1rem;
+`;
+
+const StyledNavigationMenu = styled.div`
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
   z-index: 100;
 `;
 
-const Text = styled.h1`
-  color: var(--color-light);
+const NavLink = styled.a`
+  font-size: 4rem;
+  margin: 1rem 0;
+  text-decoration: none;
+  color: var(--color-darker-light);
+  transition: font-size 0.3s, color 0.3s;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--color-darker-light);
+
+  &:hover {
+    font-size: 4.2rem;
+    color: var(--color-white);
+  }
+`;
+
+const Number = styled.span`
+  font-size: 1.5rem; /* Adjust the size of the number */
+  margin-right: 1rem; /* Add spacing between the number and the text */
 `;
 
 interface NavigationMenuProps {
@@ -25,9 +54,23 @@ function NavigationMenu({ isOpen }: NavigationMenuProps) {
   if (!isOpen) return null;
 
   return (
-    <StyledNavigationMenu>
-      <Text>Navigation</Text>
-    </StyledNavigationMenu>
+    <NavigationContainer className="grid-container">
+      <StyledNavigationMenu className="grid">
+        {/* Navigation options */}
+        <NavLink href="#">
+          <Number>01</Number> Cases
+        </NavLink>
+        <NavLink href="#">
+          <Number>02</Number> Meet the Team
+        </NavLink>
+        <NavLink href="#">
+          <Number>03</Number> Career
+        </NavLink>
+        <NavLink href="#">
+          <Number>04</Number> Contact
+        </NavLink>
+      </StyledNavigationMenu>
+    </NavigationContainer>
   );
 }
 
