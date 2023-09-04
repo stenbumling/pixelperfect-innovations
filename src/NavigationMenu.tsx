@@ -39,8 +39,9 @@ const NavLink = styled.a`
 `;
 
 const Number = styled.span`
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin-right: 1rem;
+  margin-bottom: 2rem;
 `;
 
 interface NavigationMenuProps {
