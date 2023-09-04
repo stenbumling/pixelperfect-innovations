@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <Header toggleMenu={toggleMenu} />
-      {menuOpen && <NavigationMenu isOpen={menuOpen} />}
+      {menuOpen && <NavigationMenu toggleMenu={toggleMenu} isOpen={menuOpen} />}
       <HeroSection />
       <TeamSection />
       {/* <BrandSection /> */}

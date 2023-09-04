@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 const NavigationContainer = styled.div`
@@ -46,25 +47,33 @@ const Number = styled.span`
 
 interface NavigationMenuProps {
   isOpen: boolean;
+  toggleMenu: () => void;
 }
 
-function NavigationMenu({ isOpen }: NavigationMenuProps) {
+function NavigationMenu({ isOpen, toggleMenu }: NavigationMenuProps) {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   if (!isOpen) return null;
+
+  const handleLinkClick = () => {
+    setMenuOpen(!menuOpen);
+    toggleMenu();
+    console.log("clicked");
+  };
 
   return (
     <NavigationContainer>
       <StyledNavigationMenu>
-        {/* Navigation options */}
-        <NavLink href="#">
+        <NavLink href="#" onClick={handleLinkClick}>
           <Number>01</Number> Cases
         </NavLink>
-        <NavLink href="#">
+        <NavLink href="#" onClick={handleLinkClick}>
           <Number>02</Number> Meet the Team
         </NavLink>
-        <NavLink href="#">
+        <NavLink href="#" onClick={handleLinkClick}>
           <Number>03</Number> Career
         </NavLink>
-        <NavLink href="#">
+        <NavLink href="#" onClick={handleLinkClick}>
           <Number>04</Number> Contact
         </NavLink>
       </StyledNavigationMenu>
