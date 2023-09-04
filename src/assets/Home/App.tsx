@@ -7,6 +7,10 @@ import HeroSection from "./Hero/HeroSection";
 import MapSection from "./Map/MapSection";
 import TeamSection from "./Team/TeamSection";
 
+interface SectionProps {
+  id: string;
+}
+
 function App() {
   const { menuOpen, toggleMenu, closeMenu } = useHeaderNavigation();
 
@@ -20,11 +24,11 @@ function App() {
           closeMenu={closeMenu}
         />
       )}
-      <HeroSection />
-      <TeamSection />
+      <HeroSection id="hero" />
+      <TeamSection id="team" />
       {/* <BrandSection /> */}
-      <CaseSection />
-      <MapSection />
+      <CaseSection id="cases" />
+      <MapSection id="map" />
       <Footer />
     </>
   );

@@ -5,7 +5,11 @@ import Dot from "./Dot";
 import TeamCard from "./TeamCard";
 import TeamText from "./TeamText";
 
-export default function TeamSection() {
+interface TeamSectionProps {
+  id: string;
+}
+
+export default function TeamSection({ id }: TeamSectionProps) {
   const [activePersonIndex, setActivePersonIndex] = useState(0);
   const [activePerson, setActivePerson] = useState(false);
   const [scrollContainer, setScrollContainer] = useState<HTMLDivElement | null>(
@@ -52,7 +56,7 @@ export default function TeamSection() {
   }, []);
 
   return (
-    <>
+    <div id={id}>
       <Container>
         <div className="grid-container">
           <Title>Meet the team</Title>
@@ -95,7 +99,7 @@ export default function TeamSection() {
           </div>
         </div>
       </Container>
-    </>
+    </div>
   );
 }
 

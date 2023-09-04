@@ -66,14 +66,14 @@ function NavigationMenu({
   return (
     <NavigationContainer>
       <StyledNavigationMenu>
-        <NavLink href="#" onClick={handleLinkClick}>
-          <Number>01</Number> Cases
+        <NavLink href="#team" onClick={handleLinkClick}>
+          <Number>01</Number> Meet the team
         </NavLink>
-        <NavLink href="#" onClick={handleLinkClick}>
-          <Number>02</Number> Meet the Team
+        <NavLink href="#cases" onClick={handleLinkClick}>
+          <Number>02</Number> Cases
         </NavLink>
-        <NavLink href="#" onClick={handleLinkClick}>
-          <Number>03</Number> Career
+        <NavLink href="#map" onClick={handleLinkClick}>
+          <Number>03</Number> Find us
         </NavLink>
         <NavLink href="#" onClick={handleLinkClick}>
           <Number>04</Number> Contact

@@ -2,13 +2,17 @@ import { useLoadScript } from "@react-google-maps/api";
 import styled from "styled-components";
 import InteractiveMap from "./InteractiveMap";
 
-export default function MapSection() {
+interface MapSectionProps {
+  id: string;
+}
+
+export default function MapSection({ id }: MapSectionProps) {
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
   });
 
   return (
-    <>
+    <div id={id}>
       <div className="grid-container">
         <Title>Find us</Title>
       </div>
@@ -23,7 +27,7 @@ export default function MapSection() {
           <div className="grid">416 64 Göteborg</div>
         </AddressContainer>
       </div>
-    </>
+    </div>
   );
 }
 
