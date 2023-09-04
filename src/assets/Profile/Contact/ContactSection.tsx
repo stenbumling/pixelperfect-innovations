@@ -46,17 +46,20 @@ const Title = styled.h3`
 `;
 
 const ContactForm = styled.form`
-  max-width: 600px;
+  max-width: 800px;
 `;
 
 const ContactFormRow = styled.div`
   display: flex;
-  flex-direction: column;
   margin-bottom: 16px;
 
   &:first-child {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    & > *:first-child {
+      margin-right: 14px;
+    }
   }
 `;
