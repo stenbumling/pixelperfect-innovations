@@ -10,7 +10,7 @@ const NavigationContainer = styled.div`
   display: flex;
   justify-content: center;
   @media (min-width: 768px) {
-    justify-content: flex-end;
+    justify-content: center;
   }
 `;
 
@@ -50,8 +50,8 @@ function NavigationMenu({ isOpen }: NavigationMenuProps) {
   if (!isOpen) return null;
 
   return (
-    <NavigationContainer className="grid-container">
-      <StyledNavigationMenu className="grid">
+    <NavigationContainer>
+      <StyledNavigationMenu>
         {/* Navigation options */}
         <NavLink href="#">
           <Number>01</Number> Cases
