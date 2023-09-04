@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import teamMembers from "../../../../data/team";
 import Dot from "./Dot";
@@ -8,11 +8,48 @@ import TeamText from "./TeamText";
 export default function TeamSection() {
   const [activePersonIndex, setActivePersonIndex] = useState(0);
   const [activePerson, setActivePerson] = useState(false);
+  const [scrollContainer, setScrollContainer] = useState<HTMLDivElement | null>(
+    null
+  );
+  // Ref for the scroll container
+  const galleryRef = useRef(null);
+
+  const handleHover = (index: number) => {
+    setActivePersonIndex(index);
+    setActivePerson(true);
+  };
+
+  const handleHoverLeave = () => {
+    setActivePerson(false);
+  };
 
   const handleSetActivePerson = (index: number) => {
     setActivePersonIndex(index);
     setActivePerson(true);
+
+    // Scroll to the selected card when it's activated
+    if (scrollContainer) {
+      const cardWidth =
+        scrollContainer.querySelector(".team-card")?.clientWidth;
+      if (cardWidth) {
+        const scrollLeft =
+          index * cardWidth - (scrollContainer.clientWidth - cardWidth) / 2;
+
+        // Use scrollTo for smooth scrolling
+        scrollContainer.scrollTo({
+          left: scrollLeft,
+          behavior: "smooth",
+        });
+      }
+    }
   };
+
+  useEffect(() => {
+    // Ensure the scroll container reference is set
+    if (galleryRef.current) {
+      setScrollContainer(galleryRef.current);
+    }
+  }, []);
 
   return (
     <>
@@ -22,11 +59,14 @@ export default function TeamSection() {
         </div>
         <div className="grid-container">
           <Carousel>
-            <Gallery>
+            <Gallery ref={galleryRef}>
               {teamMembers.map((person, index) => (
                 <TeamCard
+                  className="team-card"
                   person={person}
                   key={index}
+                  onMouseEnter={() => handleHover(index)}
+                  onMouseLeave={handleHoverLeave}
                   $activePerson={index === activePersonIndex}
                   setActivePerson={() => handleSetActivePerson(index)}
                 ></TeamCard>
@@ -96,5 +136,17 @@ const Gallery = styled.div`
   align-items: center;
   gap: 0.75rem;
   overflow-x: scroll;
-  padding-bottom: 3.5rem;
+  padding-bottom: 2.2rem;
+  scroll-snap-type: x mandatory;
+
+  & > * {
+    scroll-snap-align: center;
+  }
+
+  @media (max-width: 700px) {
+    padding-bottom: 2;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
 `;
