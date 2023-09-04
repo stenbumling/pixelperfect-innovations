@@ -97,6 +97,10 @@ const ProfileHeading = styled.div`
     @media (max-width: 640px) {
       padding-bottom: 0.6rem;
     }
+
+    @media (max-width: 280px) {
+      font-size: var(--font-size-l);
+    }
   }
 `;
 
