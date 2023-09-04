@@ -1,6 +1,6 @@
-import { GoogleMap, MarkerF } from "@react-google-maps/api";
-import { useMemo } from "react";
-import styled from "styled-components";
+import { GoogleMap, MarkerF } from '@react-google-maps/api';
+import { useMemo } from 'react';
+import styled from 'styled-components';
 
 export default function InteractiveMap() {
   const address = useMemo(
@@ -9,7 +9,7 @@ export default function InteractiveMap() {
   );
   const options = useMemo(
     () => ({
-      mapId: "e7f0fbdf65035845",
+      mapId: 'e7f0fbdf65035845',
       disableDefaultUI: true,
       clickableIcons: false,
       zoomControl: true,
@@ -28,7 +28,7 @@ export default function InteractiveMap() {
         <MarkerF
           position={address}
           icon={{
-            url: "/public/icons/map-marker-icon.svg",
+            url: '/icons/map-marker-icon.svg',
             scaledSize: new window.google.maps.Size(40, 40),
           }}
         />

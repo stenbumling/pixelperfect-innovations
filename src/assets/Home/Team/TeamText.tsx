@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { TeamMember } from "../../../../data/team";
-import arrow from "../../../../public/icons/arrow.svg";
+import arrow from "/icons/arrow.svg";
 
 interface Props {
   $activePerson: boolean;
