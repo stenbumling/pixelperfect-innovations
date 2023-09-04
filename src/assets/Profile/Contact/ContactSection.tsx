@@ -12,29 +12,37 @@ export default function ContactSection() {
           <ContactForm>
             <ContactFormRow>
               <label>
-                First Name
+                <span>
+                  First Name <span className="required">*</span>
+                </span>
                 <input type="text" name="firstName" />
               </label>
               <label>
-                Last Name
+                <span>
+                  Last Name <span className="required">*</span>
+                </span>
                 <input type="text" name="lastName" />
               </label>
             </ContactFormRow>
             <ContactFormRow>
               <label>
-                Company
+                <span>Company</span>
                 <input type="email" name="email" />
               </label>
             </ContactFormRow>
             <ContactFormRow>
               <label>
-                Email Address
+                <span>
+                  Email Address <span className="required">*</span>
+                </span>
                 <input type="email" name="email" />
               </label>
             </ContactFormRow>
             <ContactFormRow>
               <label>
-                Message
+                <span>
+                  Message <span className="required">*</span>
+                </span>
                 <textarea name="message" />
               </label>
             </ContactFormRow>
@@ -78,5 +86,9 @@ const ContactFormRow = styled.div`
         margin-bottom: 26px;
       }
     }
+  }
+
+  .required {
+    color: #a92801;
   }
 `;
