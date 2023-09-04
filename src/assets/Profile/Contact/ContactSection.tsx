@@ -74,7 +74,7 @@ export default function ContactSection() {
             <Form style={{ maxWidth: "1000px" }}>
               <ContactFormRow>
                 <label>
-                  <span>
+                  <span style={{fontWeight: "bold"}}>
                     First Name <span className="required">*</span>
                   </span>
                   <StyledField type="text" name="firstName" />
@@ -83,7 +83,7 @@ export default function ContactSection() {
                   </ErrorText>
                 </label>
                 <label>
-                  <span>
+                  <span style={{fontWeight: "bold"}}>
                     Last Name <span className="required">*</span>
                   </span>
                   <StyledField type="text" name="lastName" />
@@ -97,7 +97,7 @@ export default function ContactSection() {
               </ContactFormRow>
               <ContactFormRow>
                 <label>
-                  <span>Company</span>
+                  <span style={{fontWeight: "bold"}}>Company</span>
                   <StyledField type="text" name="company" />
                   <ErrorText>
                     <ErrorMessage name="company" />
@@ -106,7 +106,7 @@ export default function ContactSection() {
               </ContactFormRow>
               <ContactFormRow>
                 <label>
-                  <span>
+                  <span style={{fontWeight: "bold"}}>
                     Email Address <span className="required">*</span>
                   </span>
                   <StyledField type="email" name="email" />
@@ -117,7 +117,7 @@ export default function ContactSection() {
               </ContactFormRow>
               <ContactFormRow>
                 <label>
-                  <span>
+                  <span style={{fontWeight: "bold"}}>
                     Message <span className="required">*</span>
                   </span>
                   <Field
