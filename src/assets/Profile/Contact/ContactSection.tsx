@@ -22,6 +22,12 @@ export default function ContactSection() {
             </ContactFormRow>
             <ContactFormRow>
               <label>
+                Company
+                <input type="email" name="email" />
+              </label>
+            </ContactFormRow>
+            <ContactFormRow>
+              <label>
                 Email Address
                 <input type="email" name="email" />
               </label>

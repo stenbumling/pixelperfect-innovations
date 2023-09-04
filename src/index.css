@@ -122,9 +122,11 @@ label {
 }
 
 textarea {
+  margin-top: 4px;
   height: 200px;
 }
 
 input {
+  margin-top: 4px;
   height: 40px;
 }
