@@ -63,7 +63,7 @@ const BackgroundLight = styled.div`
 
 const TopSection = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   padding: 8rem 0 6rem;
 `;
@@ -76,6 +76,7 @@ const ProfileHeading = styled.div`
     line-height: 1.1;
     padding-bottom: 1rem;
     white-space: nowrap;
+    padding-top: 3rem;
   }
 `;
 
@@ -92,7 +93,7 @@ const DescriptionAndLink = styled.div`
 
   p {
     position: absolute;
-    left: -100%;
+    right: -80%;
     top: 62%;
     max-width: 18.75rem;
     min-width: 15rem;
@@ -112,7 +113,8 @@ const StyledNavLink = styled(NavLink)`
   text-decoration: none;
   font-weight: 800;
   color: var(--color-light);
-  position: relative;
+  position: absolute;
+  right: -80%;
   top: 95%;
 
   img {
