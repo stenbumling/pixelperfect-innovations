@@ -152,7 +152,7 @@ export default function ContactSection() {
               <Paragraph style={{ marginBottom: "1rem" }}>
                 See you soon,
               </Paragraph>
-              <img style={{ maxWidth: "108px" }} src={logo} alt="" />
+              <img style={{ maxWidth: "108px", mixBlendMode: "difference"}} src={logo} alt="" />
             </div>
           </div>
         </>
