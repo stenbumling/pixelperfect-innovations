@@ -14,7 +14,7 @@
   --color-dark: #232323;
   --color-hover: #000000;
   --font-size-xs: 0.625rem;
-  --font-size-s: 1rem;
+  --font-size-s: clamp(0.875rem, 2.5vw, 1rem);
   --font-size-m: 2rem;
   --font-size-l: 2.8125rem;
   --font-size-m: clamp(1rem, 1rem + 1.7273vw, 2rem);
