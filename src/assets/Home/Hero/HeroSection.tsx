@@ -47,6 +47,7 @@ const HeroLayout = styled.div`
   display: flex;
   flex-direction: column;
   background-color: var(--color-dark);
+  position: relative;
 `;
 
 const TitleContainer = styled.div`
@@ -81,8 +82,15 @@ const TextContainer = styled.div`
 `;
 
 const Text = styled.div`
+  position: absolute;
+  right: 0rem;
+  bottom: 3rem;
   ${sharedStyles}
   max-width: 25rem;
+
+  @media (max-width: 760px) {
+    position: unset;
+  }
 `;
 
 const Work = styled.div`
