@@ -12,7 +12,9 @@ export default function Header({ toggleMenu, menuOpen }: HeaderProps) {
     <>
       <Container className="grid-container">
         <HeaderInner className="grid">
-          <img src={logo} alt="" />
+          <a href="/">
+            <img src={logo} alt="" />
+          </a>
           <BurgerMenu toggleMenu={toggleMenu} menuOpen={menuOpen} />
         </HeaderInner>
       </Container>
