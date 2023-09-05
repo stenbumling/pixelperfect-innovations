@@ -1,8 +1,9 @@
-import Footer from "../../Footer";
-import Header from "../../Header";
-import { useHeaderNavigation } from "../../Hooks/useHeaderNavigation";
-import NavigationMenu from "../../NavigationMenu";
-import AboutSection from "./About/AboutSection";
+import Footer from '../../Footer';
+import Header from '../../Header';
+import { useHeaderNavigation } from '../../Hooks/useHeaderNavigation';
+import NavigationMenu from '../../NavigationMenu';
+import AboutSection from './About/AboutSection';
+import ContactSection from './Contact/ContactSection';
 
 function ProfilePage() {
   const { menuOpen, toggleMenu, closeMenu } = useHeaderNavigation();
@@ -18,6 +19,7 @@ function ProfilePage() {
         />
       )}
       <AboutSection />
+      <ContactSection />
       <Footer />
     </>
   );
