@@ -1,7 +1,7 @@
-import { NavLink, useParams } from 'react-router-dom';
-import styled from 'styled-components';
-import teamMembers from '../../../../data/team';
-import arrowLight from '/icons/arrow-light.svg';
+import { NavLink, useParams } from "react-router-dom";
+import styled from "styled-components";
+import teamMembers from "../../../../data/team";
+import arrowLight from "/icons/arrow-light.svg";
 
 export default function AboutSection() {
   const { id } = useParams();
@@ -87,7 +87,6 @@ const ProfileHeading = styled.div`
     font-size: var(--font-size-xl);
     line-height: 1.1;
     padding-bottom: 1rem;
-    white-space: nowrap;
     padding-top: 3rem;
 
     @media (max-width: 1024px) {
@@ -217,7 +216,7 @@ const SpecificSkill = styled.li`
   position: relative;
   padding: 0.5rem;
   &::before {
-    content: '• ';
+    content: "• ";
     position: absolute;
     top: 50%;
     left: -1.2rem;
