@@ -28,7 +28,7 @@ export default function Header({ toggleMenu, menuOpen }: HeaderProps) {
 
   return (
     <>
-      <Container className="grid-container" scrolling={scrolling}>
+      <Container className="grid-container" $scrolling={scrolling}>
         <HeaderInner className="grid">
           <a href="/">
             <img src={logo} alt="" />
@@ -40,10 +40,10 @@ export default function Header({ toggleMenu, menuOpen }: HeaderProps) {
   );
 }
 
-const Container = styled.div<{ scrolling: boolean }>`
+const Container = styled.div<{ $scrolling: boolean }>`
   background-color: transparent;
   position: fixed;
-  mix-blend-mode: ${({ scrolling }) => (scrolling ? "difference" : "none")};
+  mix-blend-mode: ${({ $scrolling }) => ($scrolling ? "difference" : "none")};
   width: 100%;
   z-index: 999;
 `;
