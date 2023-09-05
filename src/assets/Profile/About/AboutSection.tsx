@@ -157,6 +157,10 @@ const StyledNavLink = styled(NavLink)`
   right: -80%;
   top: 95%;
 
+  &:hover {
+    color: #fff;
+  }
+
   @media (max-width: 1024px) {
     top: 94%;
   }
@@ -184,7 +188,7 @@ const StyledNavLink = styled(NavLink)`
 `;
 
 const ProfileImage = styled.img`
-  width: 20rem;
+  width: 22rem;
 
   @media (max-width: 1024px) {
     width: 16rem;
