@@ -1,34 +1,31 @@
 import { IconArrowRight } from "@tabler/icons-react";
 import styled, { css } from "styled-components";
 import { SectionProps } from "../App";
+import video1 from "/videos/video.mp4";
+// import video1 from "/videos/video-hero1.mp4";
 
 function HeroSection({ id }: SectionProps) {
   return (
-    <Background id={id}>
-      <div className="grid-container">
-        <div className="grid">
-          <HeroLayout>
-            <TitleContainer>
-              <Title>Transforming Ideas Into Digital Reality</Title>
-            </TitleContainer>
-            <TextContainer>
-              <Text>
-                <p>
-                  Crafting immersive digital experiences through expert web
-                  development, app creation, and tailored software solutions.
-                </p>
-                <Work>
-                  <Link href="#">
-                    <h5>Work with us</h5>
-                    <IconArrowRight size={24} />
-                  </Link>
-                </Work>
-              </Text>
-            </TextContainer>
-          </HeroLayout>
-        </div>
-      </div>
-    </Background>
+    <HeroLayout id={id}>
+      <Video>
+        <video id="background-video" autoPlay loop muted poster={video1}>
+          <source src={video1} type="video/mp4" />
+        </video>
+        <h1>Transforming Ideas Into Digital Reality</h1>
+      </Video>
+      <TextContainer className="textContainer">
+        <p>
+          Crafting immersive digital experiences through expert web development,
+          app creation, and tailored software solutions.
+        </p>
+        <Work>
+          <Link href="#">
+            <h5>Work with us</h5>
+            <IconArrowRight size={24} />
+          </Link>
+        </Work>
+      </TextContainer>
+    </HeroLayout>
   );
 }
 
@@ -38,58 +35,94 @@ const sharedStyles = css`
   color: var(--color-light);
 `;
 
-const Background = styled.div`
-  background-color: var(--color-dark);
-`;
-
 const HeroLayout = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
   background-color: var(--color-dark);
   position: relative;
+  overflow: hidden;
 `;
 
-const TitleContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-`;
+const Video = styled.div`
+  background-color: var(--color-dark);
 
-const Title = styled.h1`
-  ${sharedStyles}
-  font-size: var(--font-size-xl);
-
-  @media (min-width: 630px) {
-    font-size: var(--font-size-xxl);
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    opacity: 0.9;
   }
 
-  @media (max-height: 660px) {
-    font-size: var(--font-size-xl);
+  h1 {
+    font-size: 10rem;
+    font-size: clamp(3.6rem, 10vw, 10rem);
+    font-size: var(--font-size-xxl);
+    position: absolute;
+    inset: 0;
+    left: 0;
+    background-color: var(--color-dark);
+    line-height: 0.95;
+    color: var(--color-white);
+    font-weight: 900;
+    transition: opacity 0.4 1s ease-in;
+    transition: font-size 0;
+    opacity: 0.5;
+    display: flex;
+    align-items: center;
+    padding-left: 5.8rem;
+    cursor: default;
+
+    &:hover {
+      transition: opacity 4s 1s ease-in;
+      opacity: 1;
+      mix-blend-mode: multiply;
+
+      h1 {
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 1100px) {
+      padding-left: 3rem;
+      padding-right: 3rem;
+      padding-top: 0%;
+      line-height: 1;
+    }
+
+    @media (max-width: 790px) {
+      font-size: 13vw;
+    }
+
+    @media (max-width: 650px) {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      font-size: 13.25vw;
+    }
   }
 `;
 
 const TextContainer = styled.div`
+  position: absolute;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: 2rem;
-
-  @media (min-width: 790px) {
-    align-items: flex-end;
-  }
-`;
-
-const Text = styled.div`
-  position: absolute;
   right: 0rem;
   bottom: 3rem;
+  z-index: 4;
   ${sharedStyles}
   max-width: 25rem;
+  right: 5rem;
 
-  @media (max-width: 760px) {
-    position: unset;
+  @media (max-width: 1100px) {
+    left: 3rem;
+  }
+
+  @media (max-width: 790px) {
+    left: 3rem;
+  }
+  @media (max-width: 650px) {
+    left: 1rem;
   }
 `;
 
