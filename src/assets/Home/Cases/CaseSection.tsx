@@ -1,21 +1,24 @@
 import styled from "styled-components";
 import cases from "../../../../data/case";
+import { SectionProps } from "../App";
 import CaseCard from "./CaseCard";
 
-export default function CaseSection() {
+export default function CaseSection({ id }: SectionProps) {
   return (
-    <OuterGridContainer className="grid-container">
-      <div className="grid">
-        <Title>Client Cases</Title>
-        <CaseVideos>
-          {cases.map((individualCase, index) => (
-            <CaseContainer key={index}>
-              <CaseCard key={index} {...individualCase} />
-            </CaseContainer>
-          ))}
-        </CaseVideos>
-      </div>
-    </OuterGridContainer>
+    <div id={id}>
+      <OuterGridContainer className="grid-container">
+        <div className="grid">
+          <Title>Client Cases</Title>
+          <CaseVideos>
+            {cases.map((individualCase, index) => (
+              <CaseContainer key={index}>
+                <CaseCard key={index} {...individualCase} />
+              </CaseContainer>
+            ))}
+          </CaseVideos>
+        </div>
+      </OuterGridContainer>
+    </div>
   );
 }
 

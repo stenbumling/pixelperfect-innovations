@@ -1,31 +1,40 @@
 import { useLoadScript } from "@react-google-maps/api";
 import styled from "styled-components";
+import { SectionProps } from "../App";
 import InteractiveMap from "./InteractiveMap";
 
-export default function MapSection() {
+export default function MapSection({ id }: SectionProps) {
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
   });
 
   return (
-    <>
-      <div className="grid-container">
-        <Title>Find us</Title>
-      </div>
-
-      <div className="grid-container">
-        <div className="grid">
-          {isLoaded ? <InteractiveMap /> : <div>Loading map...</div>}
+    <div id={id}>
+      <MapContainer>
+        <div className="grid-container">
+          <Title>Find us</Title>
         </div>
-        <AddressContainer>
-          <CompanyTitle className="grid">PixelPerfect Innovations</CompanyTitle>
-          <div className="grid">Anders Personsgatan 18</div>
-          <div className="grid">416 64 Göteborg</div>
-        </AddressContainer>
-      </div>
-    </>
+
+        <div className="grid-container">
+          <div className="grid">
+            {isLoaded ? <InteractiveMap /> : <div>Loading map...</div>}
+          </div>
+          <AddressContainer>
+            <CompanyTitle className="grid">
+              PixelPerfect Innovations
+            </CompanyTitle>
+            <div className="grid">Anders Personsgatan 18</div>
+            <div className="grid">416 64 Göteborg</div>
+          </AddressContainer>
+        </div>
+      </MapContainer>
+    </div>
   );
 }
+
+const MapContainer = styled.div`
+  padding-top: 5rem;
+`;
 
 const Title = styled.h3`
   grid-column: main;
