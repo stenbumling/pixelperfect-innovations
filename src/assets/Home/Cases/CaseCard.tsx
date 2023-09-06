@@ -1,7 +1,13 @@
 import styled from "styled-components";
 import { Case } from "../../../../data/case";
 
-export default function CaseCard({ id, video, image, description }: Case) {
+export default function CaseCard({
+  id,
+  video,
+  image,
+  description,
+  brand,
+}: Case) {
   return (
     <>
       <CaseNr>{id}</CaseNr>
@@ -11,16 +17,26 @@ export default function CaseCard({ id, video, image, description }: Case) {
         </video>
         <img src={image} alt="" />
       </CaseVideo>
-      <CaseText>{description}</CaseText>
+      <CaseText>
+        <p>{brand} </p>
+        {description}
+      </CaseText>
     </>
   );
 }
 
-const CaseText = styled.p`
+const CaseText = styled.div`
   padding: 1rem 0;
   width: 100%;
   background-color: var(--color-light);
   height: 6.69rem;
+  font-size: 0.875rem;
+
+  p {
+    font-weight: bold;
+    padding-bottom: 0.2rem;
+  }
+
   @media (max-width: 624px) {
     font-size: var(--font-size-xs);
     padding: 0.6rem 0;
@@ -53,14 +69,6 @@ const CaseVideo = styled.div`
   }
 
   @media (max-width: 684px) {
-    height: 55vh;
-    video,
-    img {
-      height: 55vh;
-    }
-  }
-
-  @media (max-width: 540px) {
     height: 35vh;
     video,
     img {
