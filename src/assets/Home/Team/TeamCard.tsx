@@ -41,8 +41,8 @@ const Card = styled.div<{ $activePerson: boolean }>`
 
   span {
     position: absolute;
-    bottom: 0.8rem;
-    left: 0.8rem;
+    bottom: 0.5rem;
+    left: 0.5rem;
     padding: 0.1rem 0.2rem;
     color: var(--color-dark);
     font-size: 1.2rem;
