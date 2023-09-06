@@ -21,7 +21,7 @@ export default function TeamText({
         <h3>{name}</h3>
         <h4>{jobTitle}</h4>
         <p>{description}</p>
-        <StyledNavLink to={`/profile/${id}/${slug}`}>
+        <StyledNavLink to={`/profile/${slug}`}>
           Go to profile <img src={arrow} alt="arrow" />
         </StyledNavLink>
       </InfoSection>
