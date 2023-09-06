@@ -128,7 +128,7 @@ const DotContainer = styled.div`
   width: 100%;
   justify-content: center;
   display: flex;
-  bottom: 1.1rem;
+  bottom: 0;
   left: 0;
 `;
 
@@ -137,7 +137,7 @@ const Gallery = styled.div`
   align-items: center;
   gap: 0.75rem;
   overflow-x: scroll;
-  padding-bottom: 2.2rem;
+  padding-bottom: 1.9rem;
   scroll-snap-type: x mandatory;
 
   & > * {
@@ -145,7 +145,6 @@ const Gallery = styled.div`
   }
 
   @media (max-width: 700px) {
-    padding-bottom: 2;
     &::-webkit-scrollbar {
       display: none;
     }
