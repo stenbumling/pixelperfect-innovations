@@ -1,8 +1,8 @@
-import { ErrorMessage, Field, Form, Formik } from "formik";
-import { useState } from "react";
-import styled from "styled-components";
-import * as Yup from "yup";
-import { SectionProps } from "../../Home/App";
+import { ErrorMessage, Field, Form, Formik } from 'formik';
+import { useState } from 'react';
+import styled from 'styled-components';
+import * as Yup from 'yup';
+import { SectionProps } from '../../Home/App';
 
 export interface FormValues {
   firstName: string;
@@ -13,14 +13,14 @@ export interface FormValues {
 
 const schema = Yup.object().shape({
   firstName: Yup.string()
-    .min(2, "Please make sure your first name is at least 2 letters.")
+    .min(2, 'Please make sure your first name is at least 2 letters.')
     .max(200, "That's a bit too long. Try shortening it.")
     .required("No need to be shy. What's your name?"),
   lastName: Yup.string()
-    .min(2, "Please make sure your last name is at least 2 letters.")
+    .min(2, 'Please make sure your last name is at least 2 letters.')
     .max(200, "That's a bit too long. Try shortening it.")
     .required(
-      "To make this process a bit smoother, we also need your last name."
+      'To make this process a bit smoother, we also need your last name.'
     ),
   email: Yup.string()
     .email(
@@ -30,9 +30,9 @@ const schema = Yup.object().shape({
       /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
       "Hmm, that doesn't look quite right. Your email address should look like something like this: example@company.se"
     )
-    .required("We need your email address to get back to you."),
+    .required('We need your email address to get back to you.'),
   message: Yup.string()
-    .min(10, "Please give us a bit more information about your request.")
+    .min(10, 'Please give us a bit more information about your request.')
     .max(10000, "That's a bit too long. Try shortening it.")
     .required("Please write us a message, we'd love to hear from you!"),
 });
@@ -40,7 +40,7 @@ const schema = Yup.object().shape({
 export default function ContactSection({ id }: SectionProps) {
   const [isSent, setSent] = useState(false);
   const [transitionStatus, setTransitionStatus] = useState(false);
-  const [firstName, setFirstName] = useState("");
+  const [firstName, setFirstName] = useState('');
 
   const handleTransition = () => {
     setTransitionStatus(true);
@@ -80,18 +80,18 @@ export default function ContactSection({ id }: SectionProps) {
               <div className="grid">
                 <Formik
                   initialValues={{
-                    firstName: "",
-                    lastName: "",
-                    email: "",
-                    message: "",
+                    firstName: '',
+                    lastName: '',
+                    email: '',
+                    message: '',
                   }}
                   validationSchema={schema}
                   onSubmit={onSubmit}
                 >
-                  <Form style={{ maxWidth: "1000px" }}>
+                  <Form style={{ maxWidth: '1000px' }}>
                     <ContactFormRow>
                       <label>
-                        <span style={{ fontWeight: "bold" }}>
+                        <span style={{ fontWeight: 'bold' }}>
                           First Name <span className="required">*</span>
                         </span>
                         <StyledField type="text" name="firstName" />
@@ -100,7 +100,7 @@ export default function ContactSection({ id }: SectionProps) {
                         </ErrorText>
                       </label>
                       <label>
-                        <span style={{ fontWeight: "bold" }}>
+                        <span style={{ fontWeight: 'bold' }}>
                           Last Name <span className="required">*</span>
                         </span>
                         <StyledField type="text" name="lastName" />
@@ -114,7 +114,7 @@ export default function ContactSection({ id }: SectionProps) {
                     </ContactFormRow>
                     <ContactFormRow>
                       <label>
-                        <span style={{ fontWeight: "bold" }}>
+                        <span style={{ fontWeight: 'bold' }}>
                           Email Address <span className="required">*</span>
                         </span>
                         <StyledField type="email" name="email" />
@@ -125,7 +125,7 @@ export default function ContactSection({ id }: SectionProps) {
                     </ContactFormRow>
                     <ContactFormRow>
                       <label>
-                        <span style={{ fontWeight: "bold" }}>
+                        <span style={{ fontWeight: 'bold' }}>
                           Message <span className="required">*</span>
                         </span>
                         <Field
@@ -134,8 +134,8 @@ export default function ContactSection({ id }: SectionProps) {
                           maxLength="10000"
                           style={{
                             fontFamily: '"Space Grotesk", sans-serif',
-                            padding: "8px",
-                            boxSizing: "border-box",
+                            padding: '8px',
+                            boxSizing: 'border-box',
                           }}
                         />
                         <ErrorText>
@@ -164,10 +164,10 @@ export default function ContactSection({ id }: SectionProps) {
                   partners? Or perhaps get to know my colleagues a little better
                   in the <a href="/team">team section</a>?
                 </Paragraph>
-                <Paragraph style={{ marginBottom: "0rem" }}>
+                <Paragraph style={{ marginBottom: '0rem' }}>
                   See you soon,
                 </Paragraph>
-                <Paragraph style={{ fontWeight: "bold" }}>
+                <Paragraph style={{ fontWeight: 'bold' }}>
                   Your new business partner
                 </Paragraph>
               </div>
@@ -233,7 +233,7 @@ const ContactFormRow = styled.div`
 `;
 
 const StyledField = styled(Field)`
-  font-family: "Space Grotesk", sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   padding: 8px;
   box-sizing: border-box;
 `;
