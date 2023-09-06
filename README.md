@@ -1,6 +1,6 @@
-# PlantMatch
+# Webbyrå
 
-En portfölj webbplats som visar upp gruppdeltagarnas kompetenser och erfarenheter för potentiella konsultuppdrag
+En portfölj-webbplats som visar upp gruppdeltagarnas kompetenser och erfarenheter för potentiella konsultuppdrag
 
 _Denna applikation är skapad för ett utbildningsarbete på Medieinstitutet._
 
@@ -48,8 +48,8 @@ npm run dev
 
 **Skapare:**
 
-Ellen Dahlgren,
-Lisa Marie Andersson,
-Marcus Rosin Lindberg,
-Gabriel Lugo Méndez,
-Tara Skoglund
+[Ellen Dahlgren](https://github.com/ellensofia),
+[Lisa Marie Andersson](https://github.com/lisamarieandersson),
+[Marcus Rosin Lindberg](https://github.com/stenbumling),
+[Gabriel Lugo Méndez](https://github.com/gabriel-lugo),
+[Tara Skoglund](https://github.com/TaraSkoglund)
