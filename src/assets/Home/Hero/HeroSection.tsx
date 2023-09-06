@@ -85,6 +85,11 @@ const Video = styled.div`
       }
     }
 
+    @media (min-width: 1700px) {
+      padding: 0% 20% 10%;
+      line-height: 1.2;
+    }
+
     @media (max-width: 1100px) {
       padding: 0% 3rem 10%;
       line-height: 1;
