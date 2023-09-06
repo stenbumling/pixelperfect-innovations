@@ -1,3 +1,4 @@
+import Marquee from "react-fast-marquee";
 import styled from "styled-components";
 import { SectionProps } from "../App";
 
@@ -27,26 +28,27 @@ export default function BrandSection({ id }: SectionProps) {
         </div>
       </div>
       <BrandContainer>
-        <Row>
-          {brandLogos.map((logo, index) => (
-            <BrandLogo key={index} src={logo} alt={`Brand Logo ${index}`} />
-          ))}
-        </Row>
-        <Row>
-          {brandLogos.map((logo, index) => (
-            <BrandLogo key={index} src={logo} alt={`Brand Logo ${index}`} />
-          ))}
-        </Row>
-        <Row>
-          {brandLogos.map((logo, index) => (
-            <BrandLogo key={index} src={logo} alt={`Brand Logo ${index}`} />
-          ))}
-        </Row>
-        <Row>
-          {brandLogos.map((logo, index) => (
-            <BrandLogo key={index} src={logo} alt={`Brand Logo ${index}`} />
-          ))}
-        </Row>
+        <Marquee speed={18}>
+          <Row>
+            {brandLogos.map((logo, index) => (
+              <BrandLogo key={index} src={logo} alt={`Brand Logo ${index}`} />
+            ))}
+          </Row>
+        </Marquee>
+        <Marquee speed={18} direction="right">
+          <Row className="row2">
+            {brandLogos.map((logo, index) => (
+              <BrandLogo key={index} src={logo} alt={`Brand Logo ${index}`} />
+            ))}
+          </Row>
+        </Marquee>
+        <Marquee speed={18}>
+          <Row className="row3">
+            {brandLogos.map((logo, index) => (
+              <BrandLogo key={index} src={logo} alt={`Brand Logo ${index}`} />
+            ))}
+          </Row>
+        </Marquee>
       </BrandContainer>
     </Background>
   );
@@ -64,16 +66,21 @@ const BrandContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 3rem;
+  padding-top: 1.5rem;
   justify-content: space-between;
   overflow: hidden;
   background: var(--color-dark);
 
-  @media (max-width: 912px) {
-    gap: 1.8rem;
+  .row2 {
+    flex-direction: row-reverse;
   }
 
-  @media (max-width: 414px) {
-    gap: 1.6rem;
+  .row3 {
+    transform: translateX(-30%);
+    display: none;
+    @media (max-width: 940px) {
+      display: flex;
+    }
   }
 `;
 
@@ -82,54 +89,24 @@ const Heading = styled.h4`
   padding-bottom: 4rem;
 
   @media (max-width: 540px) {
-    padding-bottom: 2rem;
+    padding-bottom: 3rem;
   }
 `;
 
 const Row = styled.div`
   display: flex;
-  gap: 3rem;
-
-  &:nth-of-type(1) {
-    display: none;
-    flex-direction: row-reverse;
-    @media (max-width: 940px) {
-      display: flex;
-    }
-  }
-
-  &:nth-of-type(2) {
-    transform: translateX(-30%);
-    display: none;
-    @media (max-width: 600px) {
-      display: flex;
-      transform: translateX(-158%);
-    }
-  }
-
-  &:nth-of-type(3) {
-    flex-direction: row-reverse;
-    transform: translateX(68%);
-  }
-
-  @media (max-width: 900px) {
-    gap: 2rem;
-  }
-
-  @media (max-width: 600px) {
-    gap: 1.2rem;
-  }
 `;
 
 const BrandLogo = styled.img`
   width: auto;
-  height: 1.6rem;
+  height: 1.8rem;
+  padding-right: 2rem;
 
   @media (max-width: 1024px) {
-    height: 2vw;
+    height: 4%;
   }
 
   @media (max-width: 768px) {
-    height: 3vw;
+    height: 5vw;
   }
 `;
