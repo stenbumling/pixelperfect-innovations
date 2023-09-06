@@ -25,7 +25,7 @@ export default function InteractiveMap() {
   return (
     <Container>
       <GoogleMap
-        zoom={15}
+        zoom={14}
         center={address}
         mapContainerClassName="map-container"
         options={options}
