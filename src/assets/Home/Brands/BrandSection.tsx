@@ -49,13 +49,6 @@ export default function BrandSection({ id }: SectionProps) {
             ))}
           </Row>
         </Marquee>
-        {/* <Marquee speed={18} direction="right">
-          <Row className="row4">
-            {brandLogos.map((logo, index) => (
-              <BrandLogo key={index} src={logo} alt={`Brand Logo ${index}`} />
-            ))}
-          </Row>
-        </Marquee> */}
       </BrandContainer>
     </Background>
   );
@@ -78,8 +71,7 @@ const BrandContainer = styled.div`
   overflow: hidden;
   background: var(--color-dark);
 
-  .row2,
-  .row4 {
+  .row2 {
     flex-direction: row-reverse;
   }
 
@@ -87,15 +79,6 @@ const BrandContainer = styled.div`
     transform: translateX(-30%);
     display: none;
     @media (max-width: 940px) {
-      display: flex;
-    }
-  }
-
-  .row4 {
-    display: none;
-    transform: translateX(-30%);
-
-    @media (max-width: 600px) {
       display: flex;
     }
   }
