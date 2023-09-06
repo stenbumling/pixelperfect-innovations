@@ -1,4 +1,4 @@
-import { NavLink, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import teamMembers from "../../../../data/team";
 import arrowLight from "/icons/arrow-light.svg";
@@ -25,7 +25,7 @@ export default function AboutSection() {
               <ImageAndDescription>
                 <DescriptionAndLink>
                   <p>{teamMember.description}</p>
-                  <StyledNavLink to={`/profile/${id}`}>
+                  <StyledNavLink href="#contact">
                     Let's talk <img src={arrowLight} alt="arrow light" />
                   </StyledNavLink>
                 </DescriptionAndLink>
@@ -144,7 +144,7 @@ const DescriptionAndLink = styled.div`
   }
 `;
 
-const StyledNavLink = styled(NavLink)`
+const StyledNavLink = styled.a`
   display: flex;
   gap: 1rem;
   align-items: center;
