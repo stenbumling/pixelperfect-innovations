@@ -41,15 +41,14 @@ const Card = styled.div<{ $activePerson: boolean }>`
 
   span {
     position: absolute;
-    bottom: 0.5rem;
-    left: 0.5rem;
+    bottom: 0.25rem;
+    left: 0.25rem;
     padding: 0.1rem 0.2rem;
     color: var(--color-dark);
-    font-size: 1.2rem;
+    font-size: var(--font-size-s);
     opacity: ${({ $activePerson }) => ($activePerson ? 0 : 1)};
 
     @media (max-width: 800px) {
-      font-size: var(--font-size-s);
     }
   }
   &:hover,
