@@ -39,13 +39,16 @@ export default function InteractiveMap() {
           }}
         />
         {isOpen && (
-          <InfoWindowF position={address} onCloseClick={toggleOpen}>
-            <div>
-              <h5>PixelPerfect Innovations</h5>
-              <p>Anders Personsgatan 18</p>
-              <p>416 64 Göteborg</p>
-            </div>
-          </InfoWindowF>
+            <InfoWindowF
+              position={address}
+              onCloseClick={toggleOpen}
+            >
+              <AddressContainer>
+                <h5>PixelPerfect Innovations</h5>
+                <p>Anders Personsgatan 18</p>
+                <p>416 64 Göteborg</p>
+              </AddressContainer>
+            </InfoWindowF>
         )}
       </GoogleMap>
     </Container>
@@ -57,4 +60,8 @@ const Container = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+`;
+
+const AddressContainer = styled.div`
+  font-family: 'Space Grotesk', sans-serif;
 `;

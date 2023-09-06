@@ -12,7 +12,7 @@ export default function MapSection({ id }: SectionProps) {
     <div id={id}>
       <MapContainer>
         <div className="grid-container">
-          <Title>Find us</Title>
+          <Title>Find us here</Title>
         </div>
 
         <div className="grid-container">
