@@ -15,7 +15,7 @@ npm run dev
 
 ## Demo
 
-Öppna en demolänk på [Netlify]().
+Öppna en demolänk på [Netlify](https://pixelperfectinnovations.netlify.app/).
 
 ## Krav
 
