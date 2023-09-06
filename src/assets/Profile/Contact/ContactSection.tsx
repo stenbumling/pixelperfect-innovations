@@ -2,6 +2,7 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useState } from "react";
 import styled from "styled-components";
 import * as Yup from "yup";
+import { SectionProps } from "../../Home/App";
 
 export interface FormValues {
   firstName: string;
@@ -36,7 +37,7 @@ const schema = Yup.object().shape({
     .required("Please write us a message, we'd love to hear from you!"),
 });
 
-export default function ContactSection() {
+export default function ContactSection({ id }: SectionProps) {
   const [isSent, setSent] = useState(false);
   const [transitionStatus, setTransitionStatus] = useState(false);
   const [firstName, setFirstName] = useState("");
@@ -69,7 +70,7 @@ export default function ContactSection() {
 
   return (
     <>
-      <TransitionWrapper $transitionStatus={transitionStatus}>
+      <TransitionWrapper $transitionStatus={transitionStatus} id={id}>
         {!isSent ? (
           <>
             <div className="grid-container">
@@ -157,14 +158,16 @@ export default function ContactSection() {
               <div className="grid">
                 <Paragraph>
                   I'm thrilled to hear from you, and I will get back to you as
-                  soon as humanly possible. In the meanwhile, why not delve into the <a href="/cases">cases section</a> and have a look at some of
-                  the many projects we've brought to life together with our partners? Or perhaps get to know
-                  my colleagues a little better in the <a href="/team">team section</a>?
+                  soon as humanly possible. In the meanwhile, why not delve into
+                  the <a href="/cases">cases section</a> and have a look at some
+                  of the many projects we've brought to life together with our
+                  partners? Or perhaps get to know my colleagues a little better
+                  in the <a href="/team">team section</a>?
                 </Paragraph>
                 <Paragraph style={{ marginBottom: "0rem" }}>
                   See you soon,
                 </Paragraph>
-                <Paragraph style={{fontWeight: "bold"}}>
+                <Paragraph style={{ fontWeight: "bold" }}>
                   Your new business partner
                 </Paragraph>
               </div>
