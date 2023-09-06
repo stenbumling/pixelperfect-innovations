@@ -1,7 +1,7 @@
-import { IconArrowRight } from "@tabler/icons-react";
-import styled, { css } from "styled-components";
-import { SectionProps } from "../App";
-import video from "/videos/video1.mp4";
+import { IconArrowRight } from '@tabler/icons-react';
+import styled, { css } from 'styled-components';
+import { SectionProps } from '../App';
+import video from '/videos/video1.mp4';
 
 function HeroSection({ id }: SectionProps) {
   return (
@@ -25,7 +25,7 @@ function HeroSection({ id }: SectionProps) {
           app creation, and tailored software solutions.
         </p>
         <Work>
-          <Link href="#">
+          <Link href="#team">
             <h5>Work with us</h5>
             <IconArrowRight size={24} />
           </Link>
