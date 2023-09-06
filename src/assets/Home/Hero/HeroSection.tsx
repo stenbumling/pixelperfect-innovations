@@ -1,15 +1,21 @@
 import { IconArrowRight } from "@tabler/icons-react";
 import styled, { css } from "styled-components";
 import { SectionProps } from "../App";
-import video1 from "/videos/video.mp4";
-// import video1 from "/videos/video-hero1.mp4";
+import video from "/videos/video1.mp4";
 
 function HeroSection({ id }: SectionProps) {
   return (
     <HeroLayout id={id}>
       <Video>
-        <video id="background-video" autoPlay loop muted poster={video1}>
-          <source src={video1} type="video/mp4" />
+        <video
+          id="background-video"
+          className="video2"
+          autoPlay
+          loop
+          muted
+          poster={video}
+        >
+          <source src={video} type="video/mp4" />
         </video>
         <h1>Transforming Ideas Into Digital Reality</h1>
       </Video>
@@ -52,25 +58,20 @@ const Video = styled.div`
     height: 100%;
     object-fit: cover;
     position: absolute;
-    opacity: 0.9;
+    opacity: 1;
   }
 
   h1 {
-    font-size: 10rem;
-    font-size: clamp(3.6rem, 10vw, 10rem);
-    font-size: var(--font-size-xxl);
     position: absolute;
     inset: 0;
     left: 0;
-    background-color: var(--color-dark);
-    line-height: 0.95;
-    color: var(--color-white);
-    font-weight: 900;
-    transition: opacity 0.4 1s ease-in;
-    transition: font-size 0;
-    opacity: 0.5;
     display: flex;
     align-items: center;
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    line-height: 0.95;
+    font-weight: 900;
+    opacity: 0.7;
     padding-left: 5.8rem;
     cursor: default;
 
@@ -85,14 +86,12 @@ const Video = styled.div`
     }
 
     @media (max-width: 1100px) {
-      padding-left: 3rem;
-      padding-right: 3rem;
-      padding-top: 0%;
+      padding: 0% 3rem 10%;
       line-height: 1;
     }
 
     @media (max-width: 790px) {
-      font-size: 13vw;
+      font-size: 12.5vw;
     }
 
     @media (max-width: 650px) {
@@ -115,12 +114,13 @@ const TextContainer = styled.div`
   right: 5rem;
 
   @media (max-width: 1100px) {
+    right: 3rem;
+  }
+
+  @media (max-width: 850px) {
     left: 3rem;
   }
 
-  @media (max-width: 790px) {
-    left: 3rem;
-  }
   @media (max-width: 650px) {
     left: 1rem;
   }
