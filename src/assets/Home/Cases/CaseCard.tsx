@@ -69,14 +69,6 @@ const CaseVideo = styled.div`
   }
 
   @media (max-width: 684px) {
-    height: 55vh;
-    video,
-    img {
-      height: 55vh;
-    }
-  }
-
-  @media (max-width: 540px) {
     height: 35vh;
     video,
     img {
