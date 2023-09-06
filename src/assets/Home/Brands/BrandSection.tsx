@@ -28,28 +28,28 @@ export default function BrandSection({ id }: SectionProps) {
         </div>
       </div>
       <BrandContainer>
-        <Marquee speed={20}>
+        <Marquee speed={18}>
           <Row>
             {brandLogos.map((logo, index) => (
               <BrandLogo key={index} src={logo} alt={`Brand Logo ${index}`} />
             ))}
           </Row>
         </Marquee>
-        <Marquee speed={20} direction="right">
+        <Marquee speed={18} direction="right">
           <Row className="row2">
             {brandLogos.map((logo, index) => (
               <BrandLogo key={index} src={logo} alt={`Brand Logo ${index}`} />
             ))}
           </Row>
         </Marquee>
-        <Marquee speed={20}>
+        <Marquee speed={18}>
           <Row className="row3">
             {brandLogos.map((logo, index) => (
               <BrandLogo key={index} src={logo} alt={`Brand Logo ${index}`} />
             ))}
           </Row>
         </Marquee>
-        {/* <Marquee speed={20} direction="right">
+        {/* <Marquee speed={18} direction="right">
           <Row className="row4">
             {brandLogos.map((logo, index) => (
               <BrandLogo key={index} src={logo} alt={`Brand Logo ${index}`} />
@@ -81,11 +81,11 @@ const BrandContainer = styled.div`
   .row2,
   .row4 {
     flex-direction: row-reverse;
+    transform: translateX(-30%);
   }
 
   .row3 {
     display: none;
-    transform: translateX(-30%);
     @media (max-width: 940px) {
       display: flex;
     }
@@ -112,7 +112,6 @@ const Heading = styled.h4`
 
 const Row = styled.div`
   display: flex;
-  gap: 3rem;
 `;
 
 const BrandLogo = styled.img`
