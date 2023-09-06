@@ -1,12 +1,15 @@
-import { NavLink, useParams } from "react-router-dom";
-import styled from "styled-components";
-import teamMembers from "../../../../data/team";
-import arrowLight from "/icons/arrow-light.svg";
+import { NavLink, useParams } from 'react-router-dom';
+import styled from 'styled-components';
+import teamMembers from '../../../../data/team';
+import { createSlug } from '../../../slug/utils';
+import arrowLight from '/icons/arrow-light.svg';
 
 export default function AboutSection() {
-  const { id } = useParams();
+  const { name } = useParams();
 
-  const teamMember = teamMembers.find((member) => member.id === id);
+  const teamMember = teamMembers.find(
+    (member) => createSlug(member.name) === name
+  );
 
   if (!teamMember) {
     return <div>Team member not found!</div>;
@@ -25,7 +28,7 @@ export default function AboutSection() {
               <ImageAndDescription>
                 <DescriptionAndLink>
                   <p>{teamMember.description}</p>
-                  <StyledNavLink to={`/profile/${id}`}>
+                  <StyledNavLink to={`/profile/${name}`}>
                     Let's talk <img src={arrowLight} alt="arrow light" />
                   </StyledNavLink>
                 </DescriptionAndLink>
@@ -220,7 +223,7 @@ const SpecificSkill = styled.li`
   position: relative;
   padding: 0.5rem;
   &::before {
-    content: "• ";
+    content: '• ';
     position: absolute;
     top: 50%;
     left: -1.2rem;
