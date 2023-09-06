@@ -10,7 +10,7 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
       <Route index element={<App />} />
-      <Route path="/profile/:id/:name" element={<ProfilePage />} />
+      <Route path="/profile/:name" element={<ProfilePage />} />
     </Route>
   )
 );
