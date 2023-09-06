@@ -1,8 +1,8 @@
-import { NavLink } from "react-router-dom";
-import styled from "styled-components";
-import { TeamMember } from "../../../../data/team";
-import arrow from "/icons/arrow.svg";
-
+import { NavLink } from 'react-router-dom';
+import styled from 'styled-components';
+import { TeamMember } from '../../../../data/team';
+import { createSlug } from '../../../slug/utils';
+import arrow from '/icons/arrow.svg';
 interface Props {
   $activePerson: boolean;
   setActivePerson: (index: number) => void;
@@ -14,13 +14,14 @@ export default function TeamText({
   person: { name, jobTitle, description, quote, id },
   $activePerson,
 }: Props) {
+  const slug = createSlug(name);
   return (
     <Card>
       <InfoSection $activePerson={$activePerson}>
         <h3>{name}</h3>
         <h4>{jobTitle}</h4>
         <p>{description}</p>
-        <StyledNavLink to={`/profile/${id}`}>
+        <StyledNavLink to={`/profile/${id}/${slug}`}>
           Go to profile <img src={arrow} alt="arrow" />
         </StyledNavLink>
       </InfoSection>
@@ -57,7 +58,7 @@ const InfoSection = styled.div<{ $activePerson: boolean }>`
   flex-direction: column;
   max-width: 480px;
   padding-top: 1.2rem;
-  display: ${({ $activePerson }) => ($activePerson ? "block" : "none")};
+  display: ${({ $activePerson }) => ($activePerson ? 'block' : 'none')};
 
   h3 {
     font-size: var(--font-size-m);
@@ -79,7 +80,7 @@ const InfoSection = styled.div<{ $activePerson: boolean }>`
 
 const Quote = styled.div<{ $activePerson: boolean }>`
   max-width: 480px;
-  display: ${({ $activePerson }) => ($activePerson ? "block" : "none")};
+  display: ${({ $activePerson }) => ($activePerson ? 'block' : 'none')};
 
   p {
     color: var(--color-accent);
