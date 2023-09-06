@@ -47,10 +47,8 @@ const Card = styled.div<{ $activePerson: boolean }>`
     color: var(--color-dark);
     font-size: 0.875rem;
     opacity: ${({ $activePerson }) => ($activePerson ? 0 : 1)};
-
-    @media (max-width: 800px) {
-    }
   }
+
   &:hover,
   &:focus {
     transition: 0.4s ease;

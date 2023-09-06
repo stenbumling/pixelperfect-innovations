@@ -112,10 +112,6 @@ const StyledNavLink = styled(NavLink)`
     }
   }
 
-  a {
-    font-size: var(--font-size-m);
-  }
-
   @media (max-width: 800px) {
     font-size: 1rem;
   }
