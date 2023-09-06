@@ -45,7 +45,7 @@ const Card = styled.div<{ $activePerson: boolean }>`
     left: 0.25rem;
     padding: 0.1rem 0.2rem;
     color: var(--color-dark);
-    font-size: var(--font-size-s);
+    font-size: 0.875rem;
     opacity: ${({ $activePerson }) => ($activePerson ? 0 : 1)};
 
     @media (max-width: 800px) {
