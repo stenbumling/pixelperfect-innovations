@@ -1,7 +1,7 @@
-import { useLoadScript } from "@react-google-maps/api";
-import styled from "styled-components";
-import { SectionProps } from "../App";
-import InteractiveMap from "./InteractiveMap";
+import { useLoadScript } from '@react-google-maps/api';
+import styled from 'styled-components';
+import { SectionProps } from '../App';
+import InteractiveMap from './InteractiveMap';
 
 export default function MapSection({ id }: SectionProps) {
   const { isLoaded } = useLoadScript({
@@ -12,7 +12,7 @@ export default function MapSection({ id }: SectionProps) {
     <div id={id}>
       <MapContainer>
         <div className="grid-container">
-          <Title>Find us</Title>
+          <Title>Find us here</Title>
         </div>
 
         <div className="grid-container">

@@ -25,7 +25,7 @@ export default function InteractiveMap() {
   return (
     <Container>
       <GoogleMap
-        zoom={15}
+        zoom={14}
         center={address}
         mapContainerClassName="map-container"
         options={options}
@@ -40,11 +40,11 @@ export default function InteractiveMap() {
         />
         {isOpen && (
           <InfoWindowF position={address} onCloseClick={toggleOpen}>
-            <div>
+            <AddressContainer>
               <h5>PixelPerfect Innovations</h5>
               <p>Anders Personsgatan 18</p>
               <p>416 64 Göteborg</p>
-            </div>
+            </AddressContainer>
           </InfoWindowF>
         )}
       </GoogleMap>
@@ -57,4 +57,9 @@ const Container = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+`;
+
+const AddressContainer = styled.div`
+  font-family: 'Space Grotesk', sans-serif;
+  margin-right: 1rem;
 `;
