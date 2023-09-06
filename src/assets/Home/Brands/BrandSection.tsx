@@ -89,7 +89,7 @@ const Heading = styled.h4`
   padding-bottom: 4rem;
 
   @media (max-width: 540px) {
-    padding-bottom: 2rem;
+    padding-bottom: 3rem;
   }
 `;
 
@@ -103,7 +103,7 @@ const BrandLogo = styled.img`
   padding-right: 2rem;
 
   @media (max-width: 1024px) {
-    height: 3.5%;
+    height: 4%;
   }
 
   @media (max-width: 768px) {
