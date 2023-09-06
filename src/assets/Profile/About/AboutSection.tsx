@@ -28,9 +28,9 @@ export default function AboutSection() {
               <ImageAndDescription>
                 <DescriptionAndLink>
                   <p>{teamMember.description}</p>
-                  <StyledNavLink to={`/profile/${name}`}>
+                  <StyledLink href="#contact">
                     Let's talk <img src={arrowLight} alt="arrow light" />
-                  </StyledNavLink>
+                  </StyledLink>
                 </DescriptionAndLink>
                 <ProfileImage src={teamMember.image} alt={teamMember.name} />
               </ImageAndDescription>
@@ -147,7 +147,7 @@ const DescriptionAndLink = styled.div`
   }
 `;
 
-const StyledNavLink = styled(NavLink)`
+const StyledLink = styled.a`
   display: flex;
   gap: 1rem;
   align-items: center;

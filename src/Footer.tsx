@@ -19,10 +19,12 @@ function Footer() {
               <p>416 64 Göteborg</p>
             </ContactDetails>
             <ContactDetails>
-              <Links href="#">info@pixelperfect.com</Links>
+              <Links href="mailto:info@pixelperfect.com">
+                info@pixelperfect.com
+              </Links>
             </ContactDetails>
             <ContactDetails>
-              <Links href="#">031-83 28 31</Links>
+              <Links href="tel:+4631832831">031-83 28 31</Links>
             </ContactDetails>
           </ContentDiv>
           <ContentDiv>
@@ -31,7 +33,9 @@ function Footer() {
               We are always looking for new people to join our team!
             </ContactDetails>
             <ContactDetails>
-              <Links href="#">work@pixelperfect.com</Links>
+              <Links href="mailto:work@pixelperfect.com">
+                work@pixelperfect.com
+              </Links>
             </ContactDetails>
           </ContentDiv>
           <ContentDiv>

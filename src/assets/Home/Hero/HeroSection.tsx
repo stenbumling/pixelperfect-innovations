@@ -18,7 +18,7 @@ function HeroSection({ id }: SectionProps) {
                   development, app creation, and tailored software solutions.
                 </p>
                 <Work>
-                  <Link href="#">
+                  <Link href="#team">
                     <h5>Work with us</h5>
                     <IconArrowRight size={24} />
                   </Link>
