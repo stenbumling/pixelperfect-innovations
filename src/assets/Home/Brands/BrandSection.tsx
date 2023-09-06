@@ -120,7 +120,7 @@ const BrandLogo = styled.img`
   padding-right: 2rem;
 
   @media (max-width: 1024px) {
-    height: 4vw;
+    height: 3.5%;
   }
 
   @media (max-width: 768px) {
