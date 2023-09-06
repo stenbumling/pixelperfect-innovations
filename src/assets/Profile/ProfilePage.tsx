@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Footer from "../../Footer";
 import Header from "../../Header";
 import { useHeaderNavigation } from "../../Hooks/useHeaderNavigation";
@@ -7,6 +8,10 @@ import ContactSection from "./Contact/ContactSection";
 
 function ProfilePage() {
   const { menuOpen, toggleMenu, closeMenu } = useHeaderNavigation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
