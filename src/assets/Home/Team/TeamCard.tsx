@@ -37,16 +37,19 @@ const Card = styled.div<{ $activePerson: boolean }>`
   flex-direction: column;
   position: relative;
   transition: 0.2s 0.4s ease-in-out;
+  mix-blend-mode: multiply;
+
   span {
     position: absolute;
-    bottom: 0;
-    left: 0;
+    bottom: 0.8rem;
+    left: 0.8rem;
     padding: 0.1rem 0.2rem;
-    background-color: var(--color-light);
     color: var(--color-dark);
-    font-size: var(--font-size-s);
+    font-size: 1.2rem;
+    opacity: ${({ $activePerson }) => ($activePerson ? 0 : 1)};
+
     @media (max-width: 800px) {
-      font-size: var(--font-size-xs);
+      font-size: var(--font-size-s);
     }
   }
   &:hover,
@@ -61,7 +64,7 @@ const Card = styled.div<{ $activePerson: boolean }>`
     max-width: 255px;
     cursor: pointer;
     transition: 0.6s ease;
-    opacity: ${({ $activePerson }) => ($activePerson ? 1 : 0.5)};
+    opacity: ${({ $activePerson }) => ($activePerson ? 1 : 0.35)};
 
     @media (max-width: 1191px) {
       height: 40vh;

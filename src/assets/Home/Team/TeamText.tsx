@@ -1,8 +1,8 @@
-import { NavLink } from 'react-router-dom';
-import styled from 'styled-components';
-import { TeamMember } from '../../../../data/team';
-import { createSlug } from '../../../slug/utils';
-import arrow from '/icons/arrow.svg';
+import { NavLink } from "react-router-dom";
+import styled from "styled-components";
+import { TeamMember } from "../../../../data/team";
+import { createSlug } from "../../../slug/utils";
+import arrow from "/icons/arrow.svg";
 interface Props {
   $activePerson: boolean;
   setActivePerson: (index: number) => void;
@@ -57,8 +57,8 @@ const InfoSection = styled.div<{ $activePerson: boolean }>`
   display: flex;
   flex-direction: column;
   max-width: 480px;
-  padding-top: 1.2rem;
-  display: ${({ $activePerson }) => ($activePerson ? 'block' : 'none')};
+  padding-top: 0.7rem;
+  display: ${({ $activePerson }) => ($activePerson ? "block" : "none")};
 
   h3 {
     font-size: var(--font-size-m);
@@ -80,7 +80,7 @@ const InfoSection = styled.div<{ $activePerson: boolean }>`
 
 const Quote = styled.div<{ $activePerson: boolean }>`
   max-width: 480px;
-  display: ${({ $activePerson }) => ($activePerson ? 'block' : 'none')};
+  display: ${({ $activePerson }) => ($activePerson ? "block" : "none")};
 
   p {
     color: var(--color-accent);

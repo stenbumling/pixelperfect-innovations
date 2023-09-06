@@ -27,4 +27,8 @@ const StyledDot = styled.div<{ $activePerson: boolean }>`
   @media (max-width: 700px) {
     display: block;
   }
+  @media (max-width: 450px) {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
 `;
