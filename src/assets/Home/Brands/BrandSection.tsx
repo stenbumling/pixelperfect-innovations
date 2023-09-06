@@ -81,10 +81,10 @@ const BrandContainer = styled.div`
   .row2,
   .row4 {
     flex-direction: row-reverse;
-    transform: translateX(-30%);
   }
 
   .row3 {
+    transform: translateX(-30%);
     display: none;
     @media (max-width: 940px) {
       display: flex;
