@@ -164,8 +164,10 @@ export default function ContactSection({ id }: SectionProps) {
             <div className="grid-container">
               <Title>Or reach me in another way</Title>
               <div className="grid">
-                <p>{teamMember.mail}</p>
-                <p>{teamMember.phone}</p>
+                <ContactLinksContainer>
+                  <a href={`mailto:${teamMember.mail}`}>{teamMember.mail}</a>
+                  <a href={`tel:+${teamMember.phone}`}>{teamMember.phone}</a>
+                </ContactLinksContainer>
               </div>
             </div>
           </>
@@ -268,4 +270,18 @@ const TransitionWrapper = styled.div<{ $transitionStatus: boolean }>`
   transition: opacity 0.2s ease-in-out;
   opacity: ${(props) => (props.$transitionStatus ? 0 : 1)};
   margin-bottom: 14rem;
+`;
+
+const ContactLinksContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  a {
+    text-decoration: none;
+    margin-bottom: 1rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 `;
