@@ -1,7 +1,10 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import * as Yup from "yup";
+import teamMembers from "../../../../data/team";
+import { createSlug } from "../../../slug/utils";
 import { SectionProps } from "../../Home/App";
 
 export interface FormValues {
@@ -67,6 +70,16 @@ export default function ContactSection({ id }: SectionProps) {
       setSubmitting(false);
     }, 200);
   };
+
+  const { name } = useParams();
+
+  const teamMember = teamMembers.find(
+    (member) => createSlug(member.name) === name
+  );
+
+  if (!teamMember) {
+    return <div>Contact information not found!</div>;
+  }
 
   return (
     <>
@@ -151,8 +164,8 @@ export default function ContactSection({ id }: SectionProps) {
             <div className="grid-container">
               <Title>Or reach me in another way</Title>
               <div className="grid">
-                <p>mail</p>
-                <p>telle</p>
+                <p>{teamMember.mail}</p>
+                <p>{teamMember.phone}</p>
               </div>
             </div>
           </>
