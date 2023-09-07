@@ -19,7 +19,9 @@ npm run dev
 
 Demolänk på [Netlify](https://pixelperfectinnovations.netlify.app/).
 
-**Skapare / Utvecklingsteam:**
+<br>
+
+**Skapare / Utvecklingsteam:**<br>
 [Ellen Dahlgren](https://github.com/ellensofia)
 <br>
 [Lisa Marie Andersson](https://github.com/lisamarieandersson)
