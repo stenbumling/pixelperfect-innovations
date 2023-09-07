@@ -28,6 +28,7 @@ const Container = styled.div`
 
 const StyledNavigationMenu = styled.div`
   margin-top: 3rem;
+  width: 650px;
   display: flex;
   flex-direction: column;
   justify-content: center;
