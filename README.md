@@ -17,7 +17,7 @@ npm run dev
 
 ## Demo
 
-Demolänk på [Netlify](https://pixelperfectinnovations.netlify.app/).
+Demolänk på [Netlify](https://pixelperfectinnovations.netlify.app/)
 
 <br>
 
