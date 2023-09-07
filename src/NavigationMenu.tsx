@@ -125,7 +125,7 @@ const Number = styled.span`
 
   @media (max-width: 768px) {
     font-size: 0.7rem;
-    margin-right: 1rem;
+    margin-right: 2rem;
     margin-bottom: 1rem;
   }
 `;
