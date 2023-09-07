@@ -23,7 +23,7 @@ export default function CaseSection({ id }: SectionProps) {
 }
 
 const OuterGridContainer = styled.div`
-  margin: 5rem 0 15rem;
+  margin: 2rem 0 15rem;
   transform: translateY(8vh);
   color: var(--clr-accent);
 `;

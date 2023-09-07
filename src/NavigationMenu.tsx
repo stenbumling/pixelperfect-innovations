@@ -167,7 +167,7 @@ function NavigationMenu({
               </NavLink>
               <Divider />
               <NavLink href="/#map" onClick={handleLinkClick}>
-                <Number>04</Number> Find us
+                <Number>04</Number> Find us here
               </NavLink>
             </StyledNavigationMenu>
           </Container>
