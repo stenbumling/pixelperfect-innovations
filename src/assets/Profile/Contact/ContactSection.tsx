@@ -215,7 +215,6 @@ const Paragraph = styled.p`
 
 const ContactFormRow = styled.div`
   display: flex;
-  margin-bottom: 16px;
 
   &:first-child {
     display: flex;
