@@ -78,7 +78,7 @@ const Video = styled.div`
     cursor: default;
 
     &:hover {
-      transition: opacity 1s 1s ease-in;
+      transition: opacity 4s 14s ease-in-out;
       opacity: 1;
       mix-blend-mode: multiply;
 
