@@ -88,7 +88,7 @@ const Video = styled.div`
     }
 
     @media (min-width: 1464px) {
-      padding: 0% 15% 10%;
+      padding: 0% 14% 10%;
       line-height: 1.2;
     }
 
