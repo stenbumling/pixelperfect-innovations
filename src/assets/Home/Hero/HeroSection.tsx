@@ -78,7 +78,7 @@ const Video = styled.div`
     cursor: default;
 
     &:hover {
-      transition: opacity 4s 1s ease-in;
+      transition: opacity 1s 1s ease-in;
       opacity: 1;
       mix-blend-mode: multiply;
 
@@ -87,8 +87,8 @@ const Video = styled.div`
       }
     }
 
-    @media (min-width: 1700px) {
-      padding: 0% 20% 10%;
+    @media (min-width: 1464px) {
+      padding: 0% 15% 10%;
       line-height: 1.2;
     }
 
