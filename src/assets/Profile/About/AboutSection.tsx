@@ -239,7 +239,7 @@ const SpecificSkill = styled.li`
   &::before {
     content: '• ';
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: -1.2rem;
     transform: translateY(-50%);
     color: var(--color-accent);

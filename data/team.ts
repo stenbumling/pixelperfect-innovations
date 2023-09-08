@@ -33,7 +33,7 @@ const teamMembers: TeamMember[] = [
       "Usability Testing",
     ],
     mail: "tarynwoodlund@pixelperfect.com",
-    phone: "073 362 41 03",
+    phone: "073-362 41 03",
   },
   {
     id: "2",
@@ -55,7 +55,7 @@ const teamMembers: TeamMember[] = [
       "Unit Testing",
     ],
     mail: "eleanordalhurst@pixelperfect.com",
-    phone: "073 362 01 03",
+    phone: "073-362 01 03",
   },
   {
     id: "3",
@@ -77,7 +77,7 @@ const teamMembers: TeamMember[] = [
       "Security",
     ],
     mail: "gageloganmartin@pixelperfect.com",
-    phone: "073 342 01 03",
+    phone: "073-342 01 03",
   },
   {
     id: "4",
@@ -99,7 +99,7 @@ const teamMembers: TeamMember[] = [
       "Databases",
     ],
     mail: "lilamarieandersen@pixelperfect.com",
-    phone: "073 342 01 63",
+    phone: "073-342 01 63",
   },
   {
     id: "5",
@@ -121,7 +121,7 @@ const teamMembers: TeamMember[] = [
       "Design Principles",
     ],
     mail: "marlonrosenberg@pixelperfect.com",
-    phone: "073 342 07 63",
+    phone: "073-342 07 63",
   },
 ];
 
