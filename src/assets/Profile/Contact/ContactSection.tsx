@@ -87,7 +87,7 @@ export default function ContactSection({ id }: SectionProps) {
         {!isSent ? (
           <>
             <div className="grid-container">
-              <Title>Contact me</Title>
+              <FormTitle>Contact me</FormTitle>
             </div>
             <div className="grid-container">
               <div className="grid">
@@ -174,7 +174,7 @@ export default function ContactSection({ id }: SectionProps) {
         ) : (
           <>
             <div className="grid-container">
-              <Title>Thank you for reaching out to us, {firstName}!</Title>
+              <FormTitle>Thank you for reaching out to us, {firstName}!</FormTitle>
             </div>
             <div className="grid-container">
               <div className="grid">
@@ -201,11 +201,18 @@ export default function ContactSection({ id }: SectionProps) {
   );
 }
 
+const FormTitle = styled.h3`
+  grid-column: main;
+  font-size: var(--font-size-m);
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+`;
+
 const Title = styled.h3`
   grid-column: main;
   font-size: var(--font-size-m);
   padding-bottom: 2rem;
-  padding-top: 6rem;
+  padding-top: 4rem;
 `;
 
 const Paragraph = styled.p`
