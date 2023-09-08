@@ -1,6 +1,12 @@
-# Webbyrå
+# <img src="./public/icons/logo-dark.svg" width="500rem"/>
 
-# <img src="./public/icons/logo-dark.svg" width="1000rem"/>
+## Demo
+
+Demolänk på [Netlify](https://pixelperfectinnovations.netlify.app/)
+
+<br>
+
+# Webbyrå
 
 En portfölj-webbplats som innehåller ett persongalleri där tillhörande kompetenser och erfarenheter för varje medarbetare listas för tänkbara konsultuppdrag. Webbplatsen innehåller även en portfolio, listade (fiktiva) kunder, karta, och enskilda profilsidor för varje medarbetare med tillhörande kontaktformulär.
 
@@ -14,12 +20,6 @@ För att komma igång med projektet behöver du köra dessa kommando i terminale
 npm install
 npm run dev
 ```
-
-## Demo
-
-Demolänk på [Netlify](https://pixelperfectinnovations.netlify.app/)
-
-<br>
 
 **Skapare / Utvecklingsteam:**<br>
 [Ellen Dahlgren](https://github.com/ellensofia)
