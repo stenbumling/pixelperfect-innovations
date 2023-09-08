@@ -35,7 +35,7 @@ const sharedStyles = css`
 `;
 
 const HeroLayout = styled.div`
-  height: 100vh;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   background-color: var(--color-dark);
