@@ -14,7 +14,7 @@ _Denna applikation är skapad för ett utbildningsarbete på Medieinstitutet och
 
 ## Installation
 
-För att komma igång med projektet behöver du köra dessa kommando i terminalen.
+För att komma igång med projektet behöver du köra dessa kommandon i terminalen:
 
 ```
 npm install
