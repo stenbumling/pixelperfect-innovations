@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const NavigationContainer = styled.div`
@@ -143,9 +144,21 @@ function NavigationMenu({
 }: NavigationMenuProps) {
   if (!isOpen) return null;
 
-  const handleLinkClick = () => {
+  const handleLinkClick = (sectionId: string) => {
     closeMenu();
     toggleMenu();
+    navigateToContact(sectionId);
+  };
+
+  const navigate = useNavigate();
+  const navigateToContact = (sectionId: string) => {
+    navigate("/");
+    setTimeout(() => {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
   };
 
   return (
@@ -154,19 +167,22 @@ function NavigationMenu({
         <div className="grid">
           <Container>
             <StyledNavigationMenu>
-              <NavLink href="/#team" onClick={handleLinkClick}>
+              <NavLink href="/#team" onClick={() => handleLinkClick("team")}>
                 <Number>01</Number> Meet the team
               </NavLink>
               <Divider />
-              <NavLink href="/#clients" onClick={handleLinkClick}>
+              <NavLink
+                href="/#clients"
+                onClick={() => handleLinkClick("clients")}
+              >
                 <Number>02</Number> Clients
               </NavLink>
               <Divider />
-              <NavLink href="/#cases" onClick={handleLinkClick}>
+              <NavLink href="/#cases" onClick={() => handleLinkClick("cases")}>
                 <Number>03</Number> Client cases
               </NavLink>
               <Divider />
-              <NavLink href="/#map" onClick={handleLinkClick}>
+              <NavLink href="/#map" onClick={() => handleLinkClick("map")}>
                 <Number>04</Number> Find us here
               </NavLink>
             </StyledNavigationMenu>
