@@ -34,6 +34,9 @@ export default function MapSection({ id }: SectionProps) {
 
 const MapContainer = styled.div`
   padding-top: 5rem;
+  @media (max-width: 621px) {
+    padding-top: 4rem;
+  }
 `;
 
 const Title = styled.h3`
@@ -50,6 +53,9 @@ const AddressContainer = styled.div`
   padding-bottom: 8rem;
   @media (max-width: 821px) {
     padding-bottom: 6rem;
+  }
+  @media (max-width: 621px) {
+    padding-bottom: 4rem;
   }
 `;
 
