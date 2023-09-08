@@ -1,7 +1,7 @@
-import { useLoadScript } from '@react-google-maps/api';
-import styled from 'styled-components';
-import { SectionProps } from '../App';
-import InteractiveMap from './InteractiveMap';
+import { useLoadScript } from "@react-google-maps/api";
+import styled from "styled-components";
+import { SectionProps } from "../App";
+import InteractiveMap from "./InteractiveMap";
 
 export default function MapSection({ id }: SectionProps) {
   const { isLoaded } = useLoadScript({
@@ -48,6 +48,9 @@ const AddressContainer = styled.div`
   flex-direction: column;
   padding-top: 2rem;
   padding-bottom: 8rem;
+  @media (max-width: 821px) {
+    padding-bottom: 6rem;
+  }
 `;
 
 const CompanyTitle = styled.h4`

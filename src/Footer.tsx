@@ -81,6 +81,10 @@ const ContentDiv = styled.div`
   @media (max-width: 790px) {
     margin-bottom: 3rem;
   }
+
+  @media (max-width: 600px) {
+    margin-bottom: 0rem;
+  }
 `;
 
 const SocialIcons = styled.div`
@@ -102,6 +106,7 @@ const Links = styled.a`
 
 const ContactDetails = styled.div`
   margin-bottom: 1rem;
+  max-width: 300px;
 
   ${Links} {
     text-decoration: none;
