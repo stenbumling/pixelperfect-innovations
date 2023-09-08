@@ -1,7 +1,10 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import * as Yup from 'yup';
+import teamMembers from '../../../../data/team';
+import { createSlug } from '../../../slug/utils';
 import { SectionProps } from '../../Home/App';
 
 export interface FormValues {
@@ -68,13 +71,23 @@ export default function ContactSection({ id }: SectionProps) {
     }, 200);
   };
 
+  const { name } = useParams();
+
+  const teamMember = teamMembers.find(
+    (member) => createSlug(member.name) === name
+  );
+
+  if (!teamMember) {
+    return <div>Contact information not found!</div>;
+  }
+
   return (
     <>
       <TransitionWrapper $transitionStatus={transitionStatus} id={id}>
         {!isSent ? (
           <>
             <div className="grid-container">
-              <Title>Contact me</Title>
+              <FormTitle>Send me a message</FormTitle>
             </div>
             <div className="grid-container">
               <div className="grid">
@@ -135,6 +148,7 @@ export default function ContactSection({ id }: SectionProps) {
                           style={{
                             fontFamily: '"Space Grotesk", sans-serif',
                             padding: '8px',
+                            height: '150px',
                             boxSizing: 'border-box',
                           }}
                         />
@@ -148,11 +162,26 @@ export default function ContactSection({ id }: SectionProps) {
                 </Formik>
               </div>
             </div>
+            <div className="grid-container">
+              <Title>Or reach me in another way</Title>
+              <div className="grid">
+                <ContactLinksContainer>
+                  <ContactInfo>
+                    <a href={`mailto:${teamMember.mail}`}>{teamMember.mail}</a>
+                  </ContactInfo>
+                  <ContactInfo>
+                    <a href={`tel:+${teamMember.phone}`}>{teamMember.phone}</a>
+                  </ContactInfo>
+                </ContactLinksContainer>
+              </div>
+            </div>
           </>
         ) : (
           <>
             <div className="grid-container">
-              <Title>Thank you for reaching out to us, {firstName}!</Title>
+              <FormTitle>
+                Thank you for reaching out to us, {firstName}!
+              </FormTitle>
             </div>
             <div className="grid-container">
               <div className="grid">
@@ -179,11 +208,18 @@ export default function ContactSection({ id }: SectionProps) {
   );
 }
 
+const FormTitle = styled.h3`
+  grid-column: main;
+  font-size: var(--font-size-m);
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+`;
+
 const Title = styled.h3`
   grid-column: main;
   font-size: var(--font-size-m);
   padding-bottom: 2rem;
-  padding-top: 6rem;
+  padding-top: 4rem;
 `;
 
 const Paragraph = styled.p`
@@ -193,7 +229,6 @@ const Paragraph = styled.p`
 
 const ContactFormRow = styled.div`
   display: flex;
-  margin-bottom: 16px;
 
   &:first-child {
     display: flex;
@@ -248,4 +283,34 @@ const TransitionWrapper = styled.div<{ $transitionStatus: boolean }>`
   transition: opacity 0.2s ease-in-out;
   opacity: ${(props) => (props.$transitionStatus ? 0 : 1)};
   margin-bottom: 14rem;
+`;
+
+const ContactLinksContainer = styled.ul`
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+
+  a {
+    text-decoration: none;
+    margin-bottom: 1rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+`;
+
+const ContactInfo = styled.li`
+  position: relative;
+  margin-left: 1.2rem;
+  padding: 0.5rem;
+  &::before {
+    content: '• ';
+    position: absolute;
+    top: 45%;
+    left: -1.2rem;
+    transform: translateY(-50%);
+    color: var(--color-accent);
+    font-size: var(--font-size-m);
+  }
 `;
