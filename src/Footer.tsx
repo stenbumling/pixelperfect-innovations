@@ -68,7 +68,7 @@ const FooterContainer = styled.footer`
   padding: 3rem 0;
   margin-top: 1rem;
 
-  @media (max-width: 790px) {
+  @media (max-width: 990px) {
     flex-direction: column;
   }
 `;
@@ -76,10 +76,14 @@ const FooterContainer = styled.footer`
 const ContentDiv = styled.div`
   flex: 1;
   text-align: left;
-  padding-right: 1.5rem;
+  margin-right: 6.5rem;
 
   @media (max-width: 790px) {
     margin-bottom: 3rem;
+  }
+
+  @media (max-width: 600px) {
+    margin-bottom: 0rem;
   }
 `;
 
@@ -102,6 +106,7 @@ const Links = styled.a`
 
 const ContactDetails = styled.div`
   margin-bottom: 1rem;
+  max-width: 300px;
 
   ${Links} {
     text-decoration: none;

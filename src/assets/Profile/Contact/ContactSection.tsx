@@ -87,7 +87,7 @@ export default function ContactSection({ id }: SectionProps) {
         {!isSent ? (
           <>
             <div className="grid-container">
-              <Title>Contact me</Title>
+              <FormTitle>Send me a message</FormTitle>
             </div>
             <div className="grid-container">
               <div className="grid">
@@ -101,7 +101,7 @@ export default function ContactSection({ id }: SectionProps) {
                   validationSchema={schema}
                   onSubmit={onSubmit}
                 >
-                  <Form style={{ maxWidth: "1000px" }}>
+                  <Form style={{ maxWidth: "700px" }}>
                     <ContactFormRow>
                       <label>
                         <span style={{ fontWeight: "bold" }}>
@@ -148,6 +148,7 @@ export default function ContactSection({ id }: SectionProps) {
                           style={{
                             fontFamily: '"Space Grotesk", sans-serif',
                             padding: "8px",
+                            height: "120px",
                             boxSizing: "border-box",
                           }}
                         />
@@ -156,7 +157,7 @@ export default function ContactSection({ id }: SectionProps) {
                         </ErrorText>
                       </label>
                     </ContactFormRow>
-                    <button type="submit">Send Message</button>
+                    <Button type="submit">Send Message</Button>
                   </Form>
                 </Formik>
               </div>
@@ -165,8 +166,14 @@ export default function ContactSection({ id }: SectionProps) {
               <Title>Or reach me in another way</Title>
               <div className="grid">
                 <ContactLinksContainer>
-                  <a href={`mailto:${teamMember.mail}`}>{teamMember.mail}</a>
-                  <a href={`tel:+${teamMember.phone}`}>{teamMember.phone}</a>
+                  <ContactInfo>
+                    <a className="email" href={`mailto:${teamMember.mail}`}>
+                      {teamMember.mail}
+                    </a>
+                  </ContactInfo>
+                  <ContactInfo>
+                    <a href={`tel:+${teamMember.phone}`}>{teamMember.phone}</a>
+                  </ContactInfo>
                 </ContactLinksContainer>
               </div>
             </div>
@@ -174,7 +181,9 @@ export default function ContactSection({ id }: SectionProps) {
         ) : (
           <>
             <div className="grid-container">
-              <Title>Thank you for reaching out to us, {firstName}!</Title>
+              <FormTitle>
+                Thank you for reaching out to us, {firstName}!
+              </FormTitle>
             </div>
             <div className="grid-container">
               <div className="grid">
@@ -201,11 +210,22 @@ export default function ContactSection({ id }: SectionProps) {
   );
 }
 
-const Title = styled.h3`
+const FormTitle = styled.h3`
   grid-column: main;
   font-size: var(--font-size-m);
   padding-bottom: 2rem;
-  padding-top: 6rem;
+  padding-top: 2rem;
+`;
+
+const Button = styled.button`
+  margin-top: 1rem;
+`;
+
+const Title = styled.h3`
+  grid-column: main;
+  font-size: var(--font-size-m);
+  padding-bottom: 1rem;
+  padding-top: 3rem;
 `;
 
 const Paragraph = styled.p`
@@ -237,7 +257,6 @@ const ContactFormRow = styled.div`
 
       & > *:first-child {
         margin-right: 0;
-        margin-bottom: 26px;
         max-width: 100%;
       }
 
@@ -268,12 +287,19 @@ const ErrorText = styled.div`
 const TransitionWrapper = styled.div<{ $transitionStatus: boolean }>`
   transition: opacity 0.2s ease-in-out;
   opacity: ${(props) => (props.$transitionStatus ? 0 : 1)};
-  margin-bottom: 14rem;
+  margin-bottom: 10rem;
+  @media (max-width: 1000px) {
+    margin-bottom: 6rem;
+  }
+  @media (max-width: 660px) {
+    margin-bottom: 4rem;
+  }
 `;
 
-const ContactLinksContainer = styled.div`
+const ContactLinksContainer = styled.ul`
   display: flex;
   flex-direction: column;
+  list-style-type: none;
 
   a {
     text-decoration: none;
@@ -281,6 +307,28 @@ const ContactLinksContainer = styled.div`
 
     &:hover {
       text-decoration: underline;
+    }
+  }
+`;
+
+const ContactInfo = styled.li`
+  position: relative;
+  margin-left: 1.2rem;
+  padding: 0.5rem;
+  &::before {
+    content: "• ";
+    position: absolute;
+    top: 45%;
+    left: -1.2rem;
+    transform: translateY(-50%);
+    color: var(--color-accent);
+    font-size: var(--font-size-m);
+  }
+  @media (max-width: 660px) {
+    font-size: var(--font-size-s);
+    margin-left: 0rem;
+    &::before {
+      left: -0.2rem;
     }
   }
 `;

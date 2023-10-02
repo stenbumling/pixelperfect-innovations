@@ -23,9 +23,13 @@ export default function CaseSection({ id }: SectionProps) {
 }
 
 const OuterGridContainer = styled.div`
-  margin: 5rem 0 15rem;
+  margin: 2rem 0 15rem;
   transform: translateY(8vh);
   color: var(--clr-accent);
+
+  @media (max-width: 1000px) {
+    margin: 2rem 0 10rem;
+  }
 `;
 
 const CaseVideos = styled.div`
@@ -44,13 +48,13 @@ const CaseVideos = styled.div`
   }
 
   @media (max-width: 821px) {
-    padding: 1rem 0 4rem;
+    padding: 1rem 0 0;
     row-gap: 1rem;
   }
 
   @media (max-width: 280px) {
     grid-template-columns: 1fr;
-    padding: 3rem 0 8rem;
+    padding: 3rem 0 0;
   }
 `;
 

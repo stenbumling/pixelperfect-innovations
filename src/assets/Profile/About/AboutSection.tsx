@@ -42,7 +42,10 @@ export default function AboutSection() {
         <div className="grid-container">
           <div className="grid">
             <BottomSection>
+              <DescriptionSection>
+            <Title>Hire me for your project</Title>
               <p>{teamMember.presentation}</p>
+              </DescriptionSection>
               <ListOfSkills>
                 {teamMember.skills.map((skill, index) => (
                   <SpecificSkill key={index}>{skill}</SpecificSkill>
@@ -202,6 +205,17 @@ const ProfileImage = styled.img`
   }
 `;
 
+const Title = styled.h3`
+  grid-column: main;
+  font-size: var(--font-size-m);
+  padding-bottom: 1rem;
+`;
+
+const DescriptionSection = styled.div`
+  grid-column: main;
+  padding-bottom: 2rem;
+`;
+
 const ListOfSkills = styled.ul`
   display: flex;
   flex-direction: column;
@@ -225,7 +239,7 @@ const SpecificSkill = styled.li`
   &::before {
     content: '• ';
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: -1.2rem;
     transform: translateY(-50%);
     color: var(--color-accent);

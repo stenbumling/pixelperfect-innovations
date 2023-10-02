@@ -29,6 +29,7 @@ const Container = styled.div`
 
 const StyledNavigationMenu = styled.div`
   margin-top: 3rem;
+  width: 650px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -125,7 +126,7 @@ const Number = styled.span`
 
   @media (max-width: 768px) {
     font-size: 0.7rem;
-    margin-right: 1rem;
+    margin-right: 2rem;
     margin-bottom: 1rem;
   }
 `;
@@ -182,7 +183,7 @@ function NavigationMenu({
               </NavLink>
               <Divider />
               <NavLink href="/#map" onClick={() => handleLinkClick("map")}>
-                <Number>04</Number> Find us
+                <Number>04</Number> Find us here
               </NavLink>
             </StyledNavigationMenu>
           </Container>

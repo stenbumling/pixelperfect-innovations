@@ -103,7 +103,7 @@ export default function TeamSection({ id }: SectionProps) {
 const Title = styled.h4`
   grid-column: main;
   font-size: var(--font-size-m);
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
 `;
 
 const Carousel = styled.div`
